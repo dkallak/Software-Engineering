@@ -13,6 +13,11 @@ public class ticket extends event {
         this.valid = true;
     }
 
+    public ticket(String eventName, LocalDate date, String location) {
+        super(eventName, date, location);
+        this.valid = valid;
+    }
+
     public int getSeatNumber() {
         return seatNumber;
     }
@@ -27,6 +32,10 @@ public class ticket extends event {
 
     public void setRow(int row) {
         this.row = row;
+    }
+
+    public boolean isValid() {
+        return valid;
     }
 
     @Override

@@ -9,8 +9,9 @@ public class Main {
 
         ticket movieTicket = new ticket(glommaFestivalen.getEventName(),LocalDate.of(2019, 04, 15),"Fredrikstad",15,8);
 
+        ticket soppticket1 = new ticket(glommaFestivalen.getEventName(), LocalDate.of(2019, 07,30), "Halden");
 
-        System.out.println(movieTicket);
+        System.out.println(soppticket1.isValid());
 
     }
 }
