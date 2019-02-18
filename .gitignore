@@ -43,9 +43,20 @@ git push origin <branch>
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+ticketSystem/ticketSystem/.idea/codeStyles/Project.xml
+ticketSystem/ticketSystem/.idea/dbnavigator.xml
+ticketSystem/ticketSystem/.idea/misc.xml
+ticketSystem/ticketSystem/.idea/modules.xml
+ticketSystem/ticketSystem/.idea/workspace.xml
+ticketSystem/ticketSystem/ticketSystem.iml
+
+*.xml
+
+ticketSystem/ticketSystem/.idea/workspace.xml
 <<<<<<< HEAD
+
 *.xml
 =======
->>>>>>> 9f55dab6beabecd72cb5ea1295f26b025c9d7123
 ticketSystem/ticketSystem/.idea/workspace.xml
-ticketSystem/ticketSystem/.idea/workspace.xml
+>>>>>>> 3db24f18f980c754ba37f42ed428a41a67906063
