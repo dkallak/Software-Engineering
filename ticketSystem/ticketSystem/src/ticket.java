@@ -5,7 +5,7 @@ public class ticket extends event {
     private int seatNumber;
     private int row;
 
-    public ticket(event eventName, LocalDate date, String location, int seatNumber, int row) {
+    public ticket(String eventName, LocalDate date, String location, int seatNumber, int row) {
         super(eventName, date, location);
         this.seatNumber = seatNumber;
         this.row = row;
@@ -29,6 +29,6 @@ public class ticket extends event {
 
     @Override
     public String toString() {
-        return "Navn: " + eventName + "\n" + "Setenummer " + seatNumber + "\n" + "Rad: " + row + "\n" ;
+        return "Navn: " + super.getEventName() + "\n" + "Setenummer: " + seatNumber + "\n" + "Rad: " + row + "\n" ;
     }
 }

@@ -3,7 +3,7 @@ import java.util.Date;
 import java.time.LocalDate;
 
 public class event {
-    public String eventName;
+    private String eventName;
     private LocalDate date;
     private String location;
     private int totalTickets;
