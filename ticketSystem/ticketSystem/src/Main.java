@@ -11,7 +11,7 @@ public class Main {
 
         ticket movieTicket = new ticket(glommaFestivalen,LocalDate.of(2019, 04, 15),"F%#&%¤ workspace",15,8);
 
-        System.out.println(event.getEventList());
+        
         System.out.println(movieTicket);
 
     }
