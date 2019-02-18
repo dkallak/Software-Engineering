@@ -53,5 +53,9 @@ ticketSystem/ticketSystem/ticketSystem.iml
 *.xml
 
 ticketSystem/ticketSystem/.idea/workspace.xml
+<<<<<<< HEAD
 
 *.xml
+=======
+ticketSystem/ticketSystem/.idea/workspace.xml
+>>>>>>> 3db24f18f980c754ba37f42ed428a41a67906063
