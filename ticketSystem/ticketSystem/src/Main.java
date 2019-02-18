@@ -11,7 +11,8 @@ public class Main {
 
         ticket soppticket1 = new ticket(glommaFestivalen.getEventName(), LocalDate.of(2019, 07,30), "Halden");
 
-        System.out.println(soppticket1.isValid());
+        //System.out.println(soppticket1.isValid());
+        System.out.println(soppticket1);
 
     }
 }
