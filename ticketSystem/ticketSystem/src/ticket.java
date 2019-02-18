@@ -4,11 +4,13 @@ public class ticket extends event {
 
     private int seatNumber;
     private int row;
+    private boolean valid = false;
 
     public ticket(String eventName, LocalDate date, String location, int seatNumber, int row) {
         super(eventName, date, location);
         this.seatNumber = seatNumber;
         this.row = row;
+        this.valid = true;
     }
 
     public int getSeatNumber() {

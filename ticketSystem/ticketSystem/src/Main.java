@@ -9,7 +9,7 @@ public class Main {
 
         ticket movieTicket = new ticket(glommaFestivalen.getEventName(),LocalDate.of(2019, 04, 15),"Fredrikstad",15,8);
 
-        
+
         System.out.println(movieTicket);
 
     }
