@@ -13,6 +13,7 @@ public class Main {
 
         //System.out.println(soppticket1.isValid());
         System.out.println(soppticket1);
+        System.out.println(movieTicket);
 
     }
 }
