@@ -9,7 +9,7 @@ public class Main {
         //event glommaFestivalen2 = new event ("Glommafestivalen", LocalDate.of(2019,06,15),"Fredrikstad",15000,15000,visitFredrikstad);
         //event glommaFestivalen3 = new event ("Glommafestivalen", LocalDate.of(2019,06,15),"Fredrikstad",15000,15000,visitFredrikstad);
 
-        ticket movieTicket = new ticket(glommaFestivalen,LocalDate.of(2019, 04, 15),"F%#&%¤ workspace",15,8);
+        ticket movieTicket = new ticket(glommaFestivalen,LocalDate.of(2019, 04, 15),"Fredrikstad",15,8);
 
         
         System.out.println(movieTicket);
