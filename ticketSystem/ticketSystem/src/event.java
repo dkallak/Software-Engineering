@@ -8,23 +8,26 @@ public class event {
     private String location;
     private int totalTickets;
     private int ticketsRemaining;
+    private int price;
     private organizer organizer;
     private static ArrayList<event> eventList = new ArrayList();
 
-    public event(String eventName, LocalDate date, String location, int totalTickets, int ticketsRemaining, organizer organizer) {
+    public event(String eventName, LocalDate date, String location, int totalTickets, int ticketsRemaining, organizer organizer, int price) {
         this.eventName = eventName;
         this.date = date;
         this.location = location;
+        this.price = price;
         this.totalTickets = totalTickets;
         this.ticketsRemaining = ticketsRemaining;
         this.organizer = organizer;
         event.getEventList().add(this);
     }
 
-    public event(String eventName, LocalDate date, String location) {
+    public event(String eventName, LocalDate date, String location, int price) {
         this.eventName = eventName;
         this.date = date;
         this.location = location;
+        this.price = price;
     }
 
     public event(LocalDate date, String location) {
@@ -86,6 +89,10 @@ public class event {
 
     public void setOrganizer(organizer organizer) {
         this.organizer = organizer;
+    }
+
+    public int getPrice() {
+        return price;
     }
 
     @Override
