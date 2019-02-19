@@ -16,6 +16,7 @@ public class Main {
         ticket soppticket1 = new ticket(glommaFestivalen.getEventName(), LocalDate.of(2019, 07,30), "Halden");
 
         //System.out.println(soppticket1.isValid());
+<<<<<<< HEAD
 
         LocalDate dato = LocalDate.of(2019,04,15);
 
@@ -30,6 +31,10 @@ public class Main {
         System.out.println(movieTicket);
         System.out.println(movieTicket.getDate());
         System.out.println(dato);
+=======
+        System.out.println(soppticket1);
+        System.out.println(movieTicket);
+>>>>>>> 999b7b4289b0ecdb81e3f162ec267381c162a006
 
     }
 }
