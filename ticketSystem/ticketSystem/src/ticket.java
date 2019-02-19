@@ -38,6 +38,10 @@ public class ticket extends event {
         return valid;
     }
 
+    public void setValid(boolean valid) {
+        this.valid = valid;
+    }
+
     @Override
     public String toString() {
         return "Navn: " + super.getEventName() + "\n" + "Setenummer: " + seatNumber + "\n" + "Rad: " + row + "\nBilletten er: " + valid;
