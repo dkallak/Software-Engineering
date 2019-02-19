@@ -1,10 +1,9 @@
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-<<<<<<< HEAD
-=======
+
 import java.util.Calendar;
->>>>>>> 83812f3c37db8fdfb157d67c6bf1ea89664c42b1
+
 import java.util.Date;
 
 public class Main {
@@ -18,7 +17,7 @@ public class Main {
 
         ticket soppticket1 = new ticket(glommaFestivalen.getEventName(), LocalDate.of(2019, 07,30), "Halden");
 
-<<<<<<< HEAD
+
         /*HENTER MASKIN DATA*/
         /*DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
@@ -26,7 +25,7 @@ public class Main {
 
 
         System.out.println(soppticket1.isValid());
-=======
+
         //System.out.println(soppticket1.isValid());
 
 
@@ -45,8 +44,6 @@ public class Main {
         System.out.println(dato);
         System.out.println(soppticket1);
         System.out.println(movieTicket);
-
->>>>>>> 83812f3c37db8fdfb157d67c6bf1ea89664c42b1
 
     }
 }
