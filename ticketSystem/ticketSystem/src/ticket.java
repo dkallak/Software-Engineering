@@ -44,6 +44,6 @@ public class ticket extends event {
 
     @Override
     public String toString() {
-        return "Navn: " + super.getEventName() + "\n" + "Setenummer: " + seatNumber + "\n" + "Rad: " + row + "\n" ;
+        return "Navn: " + super.getEventName() + "\n" + "Setenummer: " + seatNumber + "\n" + "Rad: " + row + "\nBilletten er: " + valid;
     }
 }
