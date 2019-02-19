@@ -15,24 +15,13 @@ public class Main {
 
         ticket soppticket1 = new ticket(glommaFestivalen.getEventName(), LocalDate.of(2019, 07,30), "Halden");
 
-        //System.out.println(soppticket1.isValid());
 
 
-        LocalDate dato = LocalDate.of(2019,04,15);
+        customer john = new customer("John", "Johnsson", 14);
 
+        payment test = new payment(john.getFirstName(), john.getLastName(), 13, 333, 2013, 2021, 433);
 
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        Date date = new Date();
-        System.out.println(dateFormat.format(date));
-
-        //if (movieTicket.getDate() < date) {
-        //    movieTicket.setValid(false);
-        //}
-        System.out.println(movieTicket);
-        System.out.println(movieTicket.getDate());
-        System.out.println(dato);
-        System.out.println(soppticket1);
-        System.out.println(movieTicket);
+        System.out.println(test);
 
 
     }
