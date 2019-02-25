@@ -27,13 +27,13 @@ public class Main {
 
 
         ticket soppTicket = new ticket(sopptur, 1,1);
+        //Slippe å gjøre dette i main, heller implementere dette i en constuctor
         sopptur.getValidTickets().add(soppTicket);
 
-<<<<<<< HEAD
+
         System.out.println(sopptur.getValidTickets());
-=======
+        System.out.println("££££££££££££££££");
         System.out.println(laurbærtur);
->>>>>>> 3587c584fd06abd213158864577e07401bcd9df7
 
         /*
         System.out.println(JohnsPayment.checkBalance(glommaFestivalen.getPrice(),JohnsPayment.getBalance()));

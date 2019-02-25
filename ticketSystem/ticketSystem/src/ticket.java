@@ -67,7 +67,9 @@ public class ticket {
 
     @Override
     public String toString() {
-        return "Navn: " + etEvent.getEventName() + "\nSetenummer: " + seatNumber + "\n" + "Rad: " + row +
+        return "Navn: " + etEvent.getEventName() +
+                "\nSetenummer: " + seatNumber +
+                "\nRad: " + row +
                 "\nBilletten er: " + valid +
                 "\nID: " + ticketID;
     }
