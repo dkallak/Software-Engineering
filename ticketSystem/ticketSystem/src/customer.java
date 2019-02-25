@@ -3,8 +3,7 @@ import java.util.LinkedList;
 
 public class customer {
 
-
-    LinkedList<ticket> ticketsAvailable = new LinkedList<ticket>();
+    LinkedList<ticket> ticketsAvailable = new LinkedList<>();
     private payment currentPayment;
     private String firstName;
     private String lastName;
@@ -15,7 +14,6 @@ public class customer {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
-        ticketsAvailable.add(this);
     }
 
     public customer(String firstName, String lastName, int age) {

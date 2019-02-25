@@ -19,7 +19,8 @@ public class Main {
 
         customer john = new customer("John", "Johnsson", 14);
 
-        payment JohnsPayment = new payment(john.getFirstName(), john.getLastName(), 13, 333, 2019, 2025, 433, 1507);
+        payment JohnsPayment = new payment(john, 4999,14,22,224,3000);
+
 
         System.out.println(JohnsPayment);
         System.out.println("*************************");

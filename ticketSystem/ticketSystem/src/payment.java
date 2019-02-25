@@ -1,4 +1,4 @@
-public class payment extends customer{
+public class payment {
 
     private customer cardName;
     private int cardNumber;
@@ -7,8 +7,7 @@ public class payment extends customer{
     private int CVC2;
     private int balance;
 
-    public payment(String firstName, String lastName, int age, int cardNumber, int validFrom, int validTo, int CVC2, int balance) {
-        super(firstName, lastName, age);
+    public payment(int cardNumber, int validFrom, int validTo, int CVC2, int balance) {
         this.cardNumber = cardNumber;
         this.validFrom = validFrom;
         this.validTo = validTo;
@@ -16,8 +15,7 @@ public class payment extends customer{
         this.balance = balance;
     }
 
-    public payment(String firstName, String lastName, int age, customer cardName, int cardNumber, int validFrom, int validTo, int CVC2, int balance) {
-        super(firstName, lastName, age);
+    public payment(customer cardName, int cardNumber, int validFrom, int validTo, int CVC2, int balance) {
         this.cardName = cardName;
         this.cardNumber = cardNumber;
         this.validFrom = validFrom;
@@ -88,8 +86,8 @@ public class payment extends customer{
 
     @Override
     public String toString() {
-        return "Navn: " + super.getFirstName() + " " + super.getLastName() +
-                "\nAlder: " + super.getAge() +
+        return "Navn: " + cardNumber +
+                "\nAlder: mystisk" +
                 "\nKortnummer: " + cardNumber +
                 "\nGyldig fra: " + validFrom +
                 "\nGyldig til: " + validTo +
