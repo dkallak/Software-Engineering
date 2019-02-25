@@ -3,7 +3,6 @@ import java.util.LinkedList;
 
 public class customer {
 
-    LinkedList<ticket> ticketsAvailable = new LinkedList<>();
     private payment currentPayment;
     private String firstName;
     private String lastName;
@@ -46,13 +45,6 @@ public class customer {
         this.age = age;
     }
 
-    public LinkedList<ticket> getTicketsAvailable() {
-        return ticketsAvailable;
-    }
-
-    public void setTicketsAvailable(LinkedList<ticket> ticketsAvailable) {
-        this.ticketsAvailable = ticketsAvailable;
-    }
 
     public payment getCurrentPayment() {
         return currentPayment;
