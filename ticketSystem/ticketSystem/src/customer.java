@@ -7,6 +7,7 @@ public class customer {
     private String firstName;
     private String lastName;
     private int age;
+    private ArrayList<ticket> tickets = new ArrayList<>();
 
     public customer(payment currentPayment, String firstName, String lastName, int age) {
         this.currentPayment = currentPayment;
@@ -53,5 +54,9 @@ public class customer {
     public void setCurrentPayment(payment currentPayment) {
         this.currentPayment = currentPayment;
     }
-}
 
+    //Holder styr på hvilke billetter kunden har kjøpt
+    public void addTicket(ticket ticket){
+        tickets.add(ticket);
+    }
+}

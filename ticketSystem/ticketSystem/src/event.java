@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Date;
 import java.time.LocalDate;
 
 public class event {
@@ -10,8 +9,14 @@ public class event {
     private int ticketsRemaining;
     private int price;
     private organizer organizer;
-    private static ArrayList<event> eventList = new ArrayList();
-    private static ArrayList<ticket> validTickets = new ArrayList();
+
+    //Fjernes fordi f.eks. en sopptur ikke trenger ikke noen liste over kino-visninger osv
+    //private static ArrayList<event> eventList = new ArrayList();
+
+    private ArrayList<ticket> tickets = new ArrayList();
+
+    //Fjernes fordi at vi i ticket.java så holder vi styr på om billetten faktisk har blitt brukt
+    //private ArrayList<ticket> tickets = new ArrayList<>();
 
     public event(String eventName, LocalDate date, String location, int totalTickets, int ticketsRemaining, organizer organizer, int price) {
         this.eventName = eventName;
@@ -21,7 +26,7 @@ public class event {
         this.totalTickets = totalTickets;
         this.ticketsRemaining = ticketsRemaining;
         this.organizer = organizer;
-        event.getEventList().add(this);
+        //event.getEventList().add(this);
     }
 
     public event(String eventName, LocalDate date, String location, int price) {
@@ -63,10 +68,6 @@ public class event {
         return organizer;
     }
 
-    public static ArrayList<event> getEventList() {
-        return eventList;
-    }
-
     public void setEventName(String eventName) {
         this.eventName = eventName;
     }
@@ -95,26 +96,33 @@ public class event {
         return price;
     }
 
-    public static ArrayList<ticket> getValidTickets() {
+
+    //Returnerer en liste over alle eventets billetter som fortsatt er gyldige/ubrukte
+    public ArrayList<ticket> getValidTickets() {
+        ArrayList <ticket> validTickets = new ArrayList(tickets);
+        for (int i = 0; i < tickets.size(); i++){
+            if(tickets.get(i).isValid()) {
+                validTickets.add(tickets.get(i));
+            }
+        }
         return validTickets;
     }
 
-    public static void setValidTickets(ArrayList<ticket> validTickets) {
-        event.validTickets = validTickets;
-    }
-
-    public static String checkValid (int ticketID, ArrayList ticketlist) {
-
-        for (int i = 0; i < ticketlist.size(); i++ ) {
-
-            if (ticketID == ticketlist.indexOf(i)) {
+    //Sjekker om den angitte billett er gyldig/ubrukt til dette eventet
+    public boolean checkValid (ticket ticket) {
+        int index=tickets.indexOf(ticket);
+        if(index>=0) { // Finnes billetten i dette eventet?
+            if(tickets.get(index).isValid()) { // Og er den gyldig?
                 System.out.println("Denne billetten er gyldig");
-            }
-            else {
-                ticketlist.add(ticketlist.indexOf(i));
+                return true;
             }
         }
-        return "";
+        return false;
+    }
+
+    //Brukes til å administrere hvilke billetter som er gyldige for dette event
+    public void addTicket(ticket ticket){
+        tickets.add(ticket);
     }
 
     @Override

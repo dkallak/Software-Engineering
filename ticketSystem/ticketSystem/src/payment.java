@@ -77,6 +77,7 @@ public class payment {
         if (ticketprice >  accountbalance) {
             return "Du har ikke dekning på kortet";
         }
+
         else {
             accountbalance = accountbalance - ticketprice;
             return "Gratulerer med kjøpet av billett"+
@@ -92,7 +93,7 @@ public class payment {
                 "\nGyldig fra: " + validFrom +
                 "\nGyldig til: " + validTo +
                 "\nDu må fornye kortet om: " + (validTo-validFrom) + " år" +
-                "\nOg nummeret du ikke må gi til John er: " + CVC2 +
+                "\nOg CVC2 nummeret er: " + CVC2 +
                 "\nSaldoen på kontoen din er: " + balance;
     }
 }
