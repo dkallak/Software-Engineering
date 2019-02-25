@@ -22,11 +22,13 @@ public class ticket {
         ticketlist.add(this);
     }
 
-    /*
-    public ticket(String eventName, LocalDate date, String location,int price, int ticketID) {
+    public ticket(event etEvent) {
+        this.etEvent = etEvent;
         this.valid = true;
+        this.ticketID = teller.incrementAndGet();
+        ticketlist.add(this);
     }
-    */
+
     public int getSeatNumber() {
         return seatNumber;
     }
