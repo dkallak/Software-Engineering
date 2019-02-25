@@ -45,7 +45,8 @@ public class Main {
         //
         //Your customer class probably needs an array / linked list of tickets, and a payment object.
         // Ticket shouldn't be a subclass of event, a ticket isn't a type of event.
-        // Event should probably have an array of tickets valid for that event, Organizer should probably have an array of events they manage.
+        // Event should probably have an array of tickets valid for that event, Organizer should
+        // probably have an array of events they manage.
         //
         //
         //
