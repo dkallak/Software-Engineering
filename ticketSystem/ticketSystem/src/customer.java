@@ -1,9 +1,22 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 public class customer {
 
 
+    LinkedList<ticket> ticketsAvailable = new LinkedList<ticket>();
+    private payment currentPayment;
     private String firstName;
     private String lastName;
     private int age;
+
+    public customer(payment currentPayment, String firstName, String lastName, int age) {
+        this.currentPayment = currentPayment;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        ticketsAvailable.add(this);
+    }
 
     public customer(String firstName, String lastName, int age) {
         this.firstName = firstName;
@@ -35,5 +48,20 @@ public class customer {
         this.age = age;
     }
 
+    public LinkedList<ticket> getTicketsAvailable() {
+        return ticketsAvailable;
+    }
+
+    public void setTicketsAvailable(LinkedList<ticket> ticketsAvailable) {
+        this.ticketsAvailable = ticketsAvailable;
+    }
+
+    public payment getCurrentPayment() {
+        return currentPayment;
+    }
+
+    public void setCurrentPayment(payment currentPayment) {
+        this.currentPayment = currentPayment;
+    }
 }
 
