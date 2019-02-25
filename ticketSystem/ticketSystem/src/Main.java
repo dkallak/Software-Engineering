@@ -29,11 +29,11 @@ public class Main {
         ticket soppTicket = new ticket(sopptur, 1,1);
         sopptur.getValidTickets().add(soppTicket);
 
-<<<<<<< HEAD
+
         System.out.println(sopptur.getValidTickets());
-=======
+
         System.out.println(laurbærtur);
->>>>>>> 3587c584fd06abd213158864577e07401bcd9df7
+
 
         /*
         System.out.println(JohnsPayment.checkBalance(glommaFestivalen.getPrice(),JohnsPayment.getBalance()));
