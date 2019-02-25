@@ -28,7 +28,7 @@ public class Main {
         System.out.println(soppticket1);
 
         System.out.println(JohnsPayment.checkBalance(glommaFestivalen.getPrice(),JohnsPayment.getBalance()));
-        JohnsPayment.setBalance(glommaFestivalen.getPrice()-JohnsPayment.getBalance());
+        JohnsPayment.setBalance(JohnsPayment.getBalance() - glommaFestivalen.getPrice());
         System.out.println(JohnsPayment);
 
     }
