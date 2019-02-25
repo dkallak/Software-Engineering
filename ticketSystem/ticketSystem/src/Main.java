@@ -26,6 +26,8 @@ public class Main {
 
         System.out.println("*************************");
 
+        //TO-DO: Sjekke om det er flere ledige plasser i et event. Husk hva hvis en kunde holder på å betale
+        //en billett mens en annen holder på å reservere samme billett, dette går jo ikke
 
         ticket soppTicket = new ticket(sopptur, 1,1);
         sopptur.getValidTickets().add(soppTicket);
