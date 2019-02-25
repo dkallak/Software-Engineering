@@ -10,6 +10,7 @@ public class Main {
 
         organizer visitFredrikstad = new organizer("Lise","Lotte");
         event glommaFestivalen = new event ("Glommafestivalen", LocalDate.of(2019,06,15),"Fredrikstad",15000,15000,visitFredrikstad, 1500);
+        event sopptur = new event("Sopptur 2019", LocalDate.of(2019,06,15), "Halden",100,100, visitFredrikstad,200);
 
         ticket movieTicket = new ticket(glommaFestivalen,4,5);
 
@@ -20,8 +21,10 @@ public class Main {
         System.out.println("*************************");
 
 
+        ticket soppTicket = new ticket(sopptur, 1,1);
+        sopptur.getValidTickets().add(soppTicket);
 
-        System.out.println(movieTicket);
+        System.out.println(sopptur.getValidTickets());
 
         /*
         System.out.println(JohnsPayment.checkBalance(glommaFestivalen.getPrice(),JohnsPayment.getBalance()));

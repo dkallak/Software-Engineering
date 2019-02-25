@@ -95,7 +95,13 @@ public class event {
         return price;
     }
 
+    public static ArrayList<ticket> getValidTickets() {
+        return validTickets;
+    }
 
+    public static void setValidTickets(ArrayList<ticket> validTickets) {
+        event.validTickets = validTickets;
+    }
 
     public static String checkValid (int ticketID, ArrayList ticketlist) {
 
