@@ -11,6 +11,7 @@ public class event {
     private int price;
     private organizer organizer;
     private static ArrayList<event> eventList = new ArrayList();
+    private static ArrayList<ticket> validTickets = new ArrayList();
 
     public event(String eventName, LocalDate date, String location, int totalTickets, int ticketsRemaining, organizer organizer, int price) {
         this.eventName = eventName;
@@ -36,7 +37,6 @@ public class event {
     }
 
     public event(event eventName, LocalDate date, String location){
-
     }
 
     public String getEventName() {
@@ -93,6 +93,22 @@ public class event {
 
     public int getPrice() {
         return price;
+    }
+
+
+
+    public static String checkValid (int ticketID, ArrayList ticketlist) {
+
+        for (int i = 0; i < ticketlist.size(); i++ ) {
+
+            if (ticketID == ticketlist.indexOf(i)) {
+                System.out.println("Denne billetten er gyldig");
+            }
+            else {
+                ticketlist.add(ticketlist.indexOf(i));
+            }
+        }
+        return "";
     }
 
     @Override

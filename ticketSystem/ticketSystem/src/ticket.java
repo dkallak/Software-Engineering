@@ -2,26 +2,28 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class ticket extends event {
+public class ticket {
 
     private static final AtomicInteger teller = new AtomicInteger(6783);
     private final int ticketID;
     private int seatNumber;
     private int row;
     private boolean valid;
+    private event etEvent;
+    private static ArrayList<ticket> ticketlist = new ArrayList();
 
 
-    public ticket(String eventName, LocalDate date, String location, int price, int seatNumber, int row) {
-        super(eventName, date, location,price);
+    public ticket(event etEvent, int seatNumber, int row) {
+        this.etEvent = etEvent;
         this.seatNumber = seatNumber;
         this.row = row;
         this.valid = true;
         this.ticketID = teller.incrementAndGet();
+        ticketlist.add(this);
     }
 
     /*
     public ticket(String eventName, LocalDate date, String location,int price, int ticketID) {
-        super(eventName, date, location, price);
         this.valid = true;
     }
     */
@@ -53,9 +55,17 @@ public class ticket extends event {
         return ticketID;
     }
 
+    public static ArrayList<ticket> getTicketlist() {
+        return ticketlist;
+    }
+
+    public static void setTicketlist(ArrayList<ticket> ticketlist) {
+        ticket.ticketlist = ticketlist;
+    }
+
     @Override
     public String toString() {
-        return "Navn: " + super.getEventName() + "\n" + "Setenummer: " + seatNumber + "\n" + "Rad: " + row +
+        return "Navn: " + etEvent.getEventName() + "\nSetenummer: " + seatNumber + "\n" + "Rad: " + row +
                 "\nBilletten er: " + valid +
                 "\nID: " + ticketID;
     }
