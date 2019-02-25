@@ -6,15 +6,15 @@ public class ticket extends event {
     private int row;
     private boolean valid;
 
-    public ticket(String eventName, LocalDate date, String location, int seatNumber, int row) {
-        super(eventName, date, location);
+    public ticket(String eventName, LocalDate date, String location, int price, int seatNumber, int row) {
+        super(eventName, date, location,price);
         this.seatNumber = seatNumber;
         this.row = row;
         this.valid = true;
     }
 
-    public ticket(String eventName, LocalDate date, String location) {
-        super(eventName, date, location);
+    public ticket(String eventName, LocalDate date, String location,int price) {
+        super(eventName, date, location, price);
         this.valid = true;
     }
 
@@ -42,8 +42,12 @@ public class ticket extends event {
         this.valid = valid;
     }
 
+
+
     @Override
     public String toString() {
-        return "Navn: " + super.getEventName() + "\n" + "Setenummer: " + seatNumber + "\n" + "Rad: " + row + "\nBilletten er: " + valid;
+        return "Navn: " + super.getEventName() + "\n" + "Setenummer: " + seatNumber + "\n" + "Rad: " + row +
+                "\nBilletten er: " + valid;
     }
+
 }
