@@ -113,6 +113,6 @@ public class event {
 
     @Override
     public String toString(){
-        return eventName + "\n " + date + "\n " + location + "\n" + "Organizer: " + String.valueOf(organizer);
+        return eventName + "\n" + date + "\n" + location + "\n" + "Organizer: " + String.valueOf(organizer);
     }
 }

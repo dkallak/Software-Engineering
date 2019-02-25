@@ -13,6 +13,11 @@ public class Main {
 
         ticket movieTicket = new ticket(glommaFestivalen,4,5);
 
+        organizer torarne = new organizer("Tor arne", "Moxheim");
+        event laurbærtur = new event("Laurbærtur", LocalDate.of(2019,06,02), "Hvaler", 200, 299, torarne, 50);
+        ticket laurbær = new ticket(laurbærtur);
+
+
         customer john = new customer("John", "Johnsson", 14);
 
         payment JohnsPayment = new payment(john, 4999,14,22,224,3000);
@@ -21,7 +26,7 @@ public class Main {
 
 
 
-        System.out.println(movieTicket);
+        System.out.println(laurbærtur);
 
         /*
         System.out.println(JohnsPayment.checkBalance(glommaFestivalen.getPrice(),JohnsPayment.getBalance()));
