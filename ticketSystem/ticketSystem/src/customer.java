@@ -9,7 +9,7 @@ public class customer {
     private int age;
     private ArrayList<ticket> tickets = new ArrayList<>();
 
-    public customer(payment currentPayment, String firstName, String lastName, int age) {
+    public customer(String firstName, String lastName, int age, payment currentPayment) {
         this.currentPayment = currentPayment;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -46,6 +46,9 @@ public class customer {
         this.age = age;
     }
 
+    public ArrayList<ticket> getTickets() {
+        return tickets;
+    }
 
     public payment getCurrentPayment() {
         return currentPayment;
@@ -55,8 +58,11 @@ public class customer {
         this.currentPayment = currentPayment;
     }
 
-    //Holder styr på hvilke billetter kunden har kjøpt
-    public void addTicket(ticket ticket){
+
+    //Metode for kjøp av billett, gir kunden eierskap til billetten. Reduserer billettantallet
+    public void addTicket(ticket ticket, event event){
+
+        event.setTicketsRemaining(event.getTicketsRemaining()-1);
         tickets.add(ticket);
     }
 }

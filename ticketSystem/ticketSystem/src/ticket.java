@@ -6,6 +6,7 @@ public class ticket {
 
     private static final AtomicInteger teller = new AtomicInteger(6783);
     private final int ticketID;
+    private customer ticketHolder;
     private int seatNumber;
     private int row;
     private boolean valid;
@@ -13,10 +14,11 @@ public class ticket {
     private static ArrayList<ticket> ticketlist = new ArrayList();
 
 
-    public ticket(event etEvent, int seatNumber, int row) {
+    public ticket(event etEvent, int seatNumber, int row, customer ticketHolder) {
         this.etEvent = etEvent;
         this.seatNumber = seatNumber;
         this.row = row;
+        this.ticketHolder = ticketHolder;
         this.valid = true;
         this.ticketID = teller.incrementAndGet();
         ticketlist.add(this);

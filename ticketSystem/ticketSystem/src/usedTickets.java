@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-
+/*
 public class usedTickets extends ticket {
 
 
@@ -9,4 +9,4 @@ public class usedTickets extends ticket {
         super(etEvent, seatNumber, row);
     }
 }
-
+*/

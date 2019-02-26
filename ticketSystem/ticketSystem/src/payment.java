@@ -7,13 +7,6 @@ public class payment {
     private int CVC2;
     private int balance;
 
-    public payment(int cardNumber, int validFrom, int validTo, int CVC2, int balance) {
-        this.cardNumber = cardNumber;
-        this.validFrom = validFrom;
-        this.validTo = validTo;
-        this.CVC2 = CVC2;
-        this.balance = balance;
-    }
 
     public payment(customer cardName, int cardNumber, int validFrom, int validTo, int CVC2, int balance) {
         this.cardName = cardName;

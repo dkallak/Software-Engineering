@@ -5,19 +5,35 @@ public class event {
     private String eventName;
     private LocalDate date;
     private String location;
+    private int stage;
     private int totalTickets;
     private int ticketsRemaining;
     private int price;
     private organizer organizer;
-
-    //Fjernes fordi f.eks. en sopptur ikke trenger ikke noen liste over kino-visninger osv
-    //private static ArrayList<event> eventList = new ArrayList();
+    private static ArrayList<event> allEvents = new ArrayList();
+    private static ArrayList<event> filmList = new ArrayList();
+    private static ArrayList<event> otherEvents = new ArrayList();
 
     private ArrayList<ticket> tickets = new ArrayList();
 
     //Fjernes fordi at vi i ticket.java så holder vi styr på om billetten faktisk har blitt brukt
     //private ArrayList<ticket> tickets = new ArrayList<>();
 
+    //Constructor for all movies
+    public event(String eventName, LocalDate date, String location, int stage, int totalTickets, int ticketsRemaining, organizer organizer, int price) {
+        this.eventName = eventName;
+        this.date = date;
+        this.location = location;
+        this.stage = stage;
+        this.price = price;
+        this.totalTickets = totalTickets;
+        this.ticketsRemaining = ticketsRemaining;
+        this.organizer = organizer;
+        event.getEventList().add(this);
+        event.getFilmList().add(this);
+    }
+
+    //Constuctor for all other events
     public event(String eventName, LocalDate date, String location, int totalTickets, int ticketsRemaining, organizer organizer, int price) {
         this.eventName = eventName;
         this.date = date;
@@ -26,22 +42,25 @@ public class event {
         this.totalTickets = totalTickets;
         this.ticketsRemaining = ticketsRemaining;
         this.organizer = organizer;
-        //event.getEventList().add(this);
+        event.getEventList().add(this);
+        event.getOtherEvents().add(this);
     }
 
-    public event(String eventName, LocalDate date, String location, int price) {
-        this.eventName = eventName;
-        this.date = date;
-        this.location = location;
-        this.price = price;
+
+    public static ArrayList<event> getOtherEvents() {
+        return otherEvents;
     }
 
-    public event(LocalDate date, String location) {
-        this.date = date;
-        this.location = location;
+    public static void setOtherEvents(ArrayList<event> otherEvents) {
+        event.otherEvents = otherEvents;
     }
 
-    public event(event eventName, LocalDate date, String location){
+    public static ArrayList<event> getFilmList() {
+        return filmList;
+    }
+
+    public static void setFilmList(ArrayList<event> filmList) {
+        event.filmList = filmList;
     }
 
     public String getEventName() {
@@ -54,6 +73,18 @@ public class event {
 
     public String getLocation() {
         return location;
+    }
+
+    public int getStage() {
+        return stage;
+    }
+
+    public void setStage(int stage) {
+        this.stage = stage;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     public int getTotalTickets() {
@@ -96,6 +127,13 @@ public class event {
         return price;
     }
 
+    public static ArrayList<event> getEventList() {
+        return allEvents;
+    }
+
+    public static void setEventList(ArrayList<event> allEvents) {
+        event.allEvents = allEvents;
+    }
 
     //Returnerer en liste over alle eventets billetter som fortsatt er gyldige/ubrukte
     public ArrayList<ticket> getValidTickets() {
@@ -125,8 +163,9 @@ public class event {
         tickets.add(ticket);
     }
 
+
     @Override
     public String toString(){
-        return eventName + "\n" + date + "\n" + location + "\n" + "Organizer: " + String.valueOf(organizer);
+        return "\n****************\n" + eventName + "\n" + date + "\nSted: " + location + "\n" + "Organizer: " + String.valueOf(organizer.getCompany() + "\n");
     }
 }

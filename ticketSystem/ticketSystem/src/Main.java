@@ -3,67 +3,48 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
+        //Oppretter arragører
+        organizer festiviteten = new organizer("Festiviteten", "Gunnhild", "Hansen");
+        organizer dnt = new organizer("Det norske turistforeningen", "Lars", "Monsen");
 
-        organizer visitFredrikstad = new organizer("Lise","Lotte");
-        event glommaFestivalen = new event ("Glommafestivalen", LocalDate.of(2019,06,15),"Fredrikstad",15000,15000,visitFredrikstad, 1500);
-        event sopptur = new event("Sopptur 2019", LocalDate.of(2019,06,15), "Halden",100,100, visitFredrikstad,200);
+        //Oppretter eventer
+        event nemo = new event("Oppdrag Nemo", LocalDate.of(2019,03,05),"Festiviteten", 4, 200, 200, festiviteten, 140);
+        event avatar = new event("Avatar", LocalDate.of(2019,03,06),"Festiviteten", 2, 400, 400, festiviteten, 200);
+        event rainman = new event("Rain Man", LocalDate.of(2019,12,23),"Festiviteten", 1, 200, 200, festiviteten, 100);
 
-        ticket movieTicket = new ticket(glommaFestivalen,4,5);
+        event fiskePir = new event("Fiske pir", LocalDate.of(2019,07,15), "Langvannet", 300, 300, dnt,30);
 
-        organizer torarne = new organizer("Tor arne", "Moxheim");
-        event laurbærtur = new event("Laurbærtur", LocalDate.of(2019,06,02), "Hvaler", 200, 299, torarne, 50);
-        ticket laurbær = new ticket(laurbærtur);
-        laurbærtur.addTicket(laurbær);
-
-        customer john = new customer("John", "Johnsson", 14);
-
-        john.addTicket(laurbær);
-        payment JohnsPayment = new payment(john, 4999,14,22,224,3000);
-
-        System.out.println("*************************");
-
-        //TO-DO: Sjekke om det er flere ledige plasser i et event. Husk hva hvis en kunde holder på å betale
-        //en billett mens en annen holder på å reservere samme billett, dette går jo ikke
-
-        ticket soppTicket = new ticket(sopptur, 1,1);
-        //Slippe å gjøre dette i main, heller implementere dette i en constuctor
-        sopptur.getValidTickets().add(soppTicket);
+        //Oppretter en kunde
+        customer martin = new customer("Martin", "Martinsen", 23);
 
 
-        System.out.println(sopptur.getValidTickets());
-        System.out.println("££££££££££££££££");
-        System.out.println(laurbærtur);
+        //USE-CASE: Sjekker utvalg
 
-        /*
-        System.out.println(JohnsPayment.checkBalance(glommaFestivalen.getPrice(),JohnsPayment.getBalance()));
-        JohnsPayment.setBalance(JohnsPayment.getBalance() - glommaFestivalen.getPrice());
-        System.out.println(JohnsPayment);
-        */
+        //Utvalg alle filmer
+        //System.out.println(event.getFilmList());
 
-        //That collection of classes seems pretty complete
-        //
-        //Your customer class probably needs an array / linked list of tickets, and a payment object.
-        // Ticket shouldn't be a subclass of event, a ticket isn't a type of event.
-        // Event should probably have an array of tickets valid for that event, Organizer should
-        // probably have an array of events they manage.
-        //
-        //
-        //
-        //
-        //G: But the event class should not have an array holding customers objects right?
-        //
-        //It doesn't have to, no
-        //It depends on how (or if!) you need to track how many people are going to an event
-        //
-        //So what I'd do is have each ticket have a unique ID.
-        // Then, an event will have an array of unique IDs of valid tickets.
-        // So to check if a ticket is valid for a specific event,
-        // all you have to do is compare the ticket's unique ID to the list of unique IDs for an event!
-        //
-        //So yeah, you just need to track who has what ticket :) :)
+        //Utvalg absolutt alle events
+        //System.out.println(event.getEventList());
+
+        //Utvalg alle andre events
+        //System.out.println(event.getOtherEvents());
+
+
+
+        //USE-CASE: Kjøpe billett
+        //1 holde av billett
+        //2 opprette billettobjekt
+        //3 Boolean, kjøp godkjent eller ikke
+
+        ticket nemoTicket1 = new ticket(nemo, 30, 8, martin);
+        martin.addTicket(nemoTicket1,nemo);
+        System.out.println(martin.getTickets());
+
+
     }
 }
