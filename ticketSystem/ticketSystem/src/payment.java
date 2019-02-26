@@ -1,6 +1,6 @@
 public class payment {
 
-    private customer cardName;
+    private String cardholder;
     private int cardNumber;
     private int validFrom;
     private int validTo;
@@ -8,8 +8,8 @@ public class payment {
     private int balance;
 
 
-    public payment(customer cardName, int cardNumber, int validFrom, int validTo, int CVC2, int balance) {
-        this.cardName = cardName;
+    public payment(String cardholder, int cardNumber, int validFrom, int validTo, int CVC2, int balance) {
+        this.cardholder = cardholder;
         this.cardNumber = cardNumber;
         this.validFrom = validFrom;
         this.validTo = validTo;
@@ -17,12 +17,12 @@ public class payment {
         this.balance = balance;
     }
 
-    public customer getCardName() {
-        return cardName;
+    public String getCardholder() {
+        return cardholder;
     }
 
-    public void setCardName(customer cardName) {
-        this.cardName = cardName;
+    public void setCardholder(String cardholder) {
+        this.cardholder = cardholder;
     }
 
     public int getCardNumber() {

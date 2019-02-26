@@ -60,9 +60,37 @@ public class customer {
 
 
     //Metode for kjøp av billett, gir kunden eierskap til billetten. Reduserer billettantallet
-    public void addTicket(ticket ticket, event event){
+    public void addTicket(ticket ticket, event event, customer customer){
 
         event.setTicketsRemaining(event.getTicketsRemaining()-1);
         tickets.add(ticket);
+        customer.getCurrentPayment().setBalance(customer.getCurrentPayment().getBalance() - event.getPrice());
+    }
+
+
+    //Metode for kansellering av billett. Øker billettantallet
+    public void cancelTicket (ticket ticket, event event, customer customer) {
+
+        event.setTicketsRemaining(event.getTicketsRemaining()+1);
+        for (int i = 0; i < tickets.size(); i++) {
+        //event.getEventList().get(i).getEventName()
+            if (tickets.get(i).getTicketID() == ticket.getTicketID()) {
+
+                tickets.remove(i);
+
+                if (tickets.get(i).isValid() == true) {
+
+                    //customer.getCurrentPayment().setBalance(customer.getCurrentPayment().getBalance() + event.getPrice());
+                    //customer.getCurrentPayment().setBalance(customer.get(i).);
+
+                }
+                /*
+                else {
+                    customer.getCurrentPayment().setBalance(customer.getCurrentPayment().getBalance());
+                }
+                */
+
+            }
+        }
     }
 }

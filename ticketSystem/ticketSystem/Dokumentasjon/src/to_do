@@ -1,4 +1,9 @@
 
+-Fortsette fra linje 84 på customer
+
 - Sjekke om det er flere ledige plasser i et event. Husk hva hvis en kunde holder på å betale
   en billett mens en annen holder på å reservere samme billett, dette går jo ikke
 - Holde av billet, lag dokumentasjon, og nevn det i rapporten
+
+
+
