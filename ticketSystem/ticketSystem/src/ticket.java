@@ -65,6 +65,8 @@ public class ticket {
         ticket.ticketlist = ticketlist;
     }
 
+
+
     @Override
     public String toString() {
         return "Navn: " + etEvent.getEventName() +

@@ -17,14 +17,17 @@ public class Main {
         organizer torarne = new organizer("Tor arne", "Moxheim");
         event laurbærtur = new event("Laurbærtur", LocalDate.of(2019,06,02), "Hvaler", 200, 299, torarne, 50);
         ticket laurbær = new ticket(laurbærtur);
-
+        laurbærtur.addTicket(laurbær);
 
         customer john = new customer("John", "Johnsson", 14);
 
+        john.addTicket(laurbær);
         payment JohnsPayment = new payment(john, 4999,14,22,224,3000);
 
         System.out.println("*************************");
 
+        //TO-DO: Sjekke om det er flere ledige plasser i et event. Husk hva hvis en kunde holder på å betale
+        //en billett mens en annen holder på å reservere samme billett, dette går jo ikke
 
         ticket soppTicket = new ticket(sopptur, 1,1);
         //Slippe å gjøre dette i main, heller implementere dette i en constuctor
