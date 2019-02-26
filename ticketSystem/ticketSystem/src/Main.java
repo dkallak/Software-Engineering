@@ -64,6 +64,6 @@ public class Main {
         // So to check if a ticket is valid for a specific event,
         // all you have to do is compare the ticket's unique ID to the list of unique IDs for an event!
         //
-        //So yeah, you just need to track who has what ticket :)
+        //So yeah, you just need to track who has what ticket :) :)
     }
 }
