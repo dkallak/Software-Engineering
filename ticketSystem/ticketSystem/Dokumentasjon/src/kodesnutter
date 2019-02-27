@@ -24,3 +24,32 @@ public boolean checkValid (ticket ticket) {
     }
     return false;
 }
+
+
+
+
+
+
+
+
+//Sjekker om den angitte billett er gyldig/ubrukt til dette eventet
+    public boolean checkValid (ticket ticket) {
+
+        //int index=tickets.indexOf(ticket);
+
+        //if(index>=0) { // Finnes billetten i dette eventet?
+
+        Boolean test;
+        for (int i = 0; i < tickets.size(); i++) {
+            if (tickets.get(i).isValid()) { // Og er den gyldig?
+                    System.out.println("Denne billetten er gyldig");
+                    //return true;
+                    test = true;
+                }
+                else {
+                    //return false;
+                    test = false;
+                }
+            }
+        return test;
+    }

@@ -65,19 +65,24 @@ public class Main {
 
         System.out.println("************************");
         System.out.println(martin.getCurrentPayment().getBalance());
-        //martin.cancelTicket(nemoTicket1,nemo,martin);
-        martin.cancelTicket(nemoTicket2,nemo,martin);
+        martin.cancelTicket(nemoTicket1,nemo,martin);
         martin.cancelTicket(nemoTicket2,nemo,martin);
         System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
         System.out.println(martin.getCurrentPayment().getBalance());
         //martin.cancelTicket(nemoTicket2,nemo,martin);
 
+
+        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+
         nemo.addTicket(nemoTicket1);
         nemo.addTicket(nemoTicket2);
+
 
         //Hvorfor blir billett 2 false?
         System.out.println(nemo.checkValid(nemoTicket1));
         System.out.println(nemo.checkValid(nemoTicket2));
+        System.out.println("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
+        System.out.println(nemo.getTickets().size());
 
 
     }

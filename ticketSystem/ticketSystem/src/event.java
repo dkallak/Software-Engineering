@@ -156,12 +156,11 @@ public class event {
 
         int index=tickets.indexOf(ticket);
 
-        if(index>=0) { // Finnes billetten i dette eventet?
-            if(tickets.get(index).isValid()) { // Og er den gyldig?
+            while (tickets.get(index).isValid()){
                 System.out.println("Denne billetten er gyldig");
                 return true;
             }
-        }
+
         return false;
     }
 
