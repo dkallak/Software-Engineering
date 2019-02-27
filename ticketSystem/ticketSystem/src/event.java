@@ -149,7 +149,6 @@ public class event {
         }
         return validTickets;
     }
-
     
     //Sjekker om den angitte billett er gyldig/ubrukt til dette eventet
     public boolean checkValid (ticket ticket) {
@@ -160,7 +159,7 @@ public class event {
                 System.out.println("Denne billetten er gyldig");
                 return true;
             }
-
+        System.out.println("Billetten er IKKE gyldig!");
         return false;
     }
 
@@ -168,7 +167,6 @@ public class event {
     public void addTicket(ticket ticket){
         tickets.add(ticket);
     }
-
 
     @Override
     public String toString(){
