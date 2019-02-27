@@ -87,6 +87,10 @@ public class event {
         this.price = price;
     }
 
+    public ArrayList<ticket> getTickets() {
+        return tickets;
+    }
+
     public int getTotalTickets() {
         return totalTickets;
     }
@@ -148,7 +152,9 @@ public class event {
 
     //Sjekker om den angitte billett er gyldig/ubrukt til dette eventet
     public boolean checkValid (ticket ticket) {
+
         int index=tickets.indexOf(ticket);
+
         if(index>=0) { // Finnes billetten i dette eventet?
             if(tickets.get(index).isValid()) { // Og er den gyldig?
                 System.out.println("Denne billetten er gyldig");

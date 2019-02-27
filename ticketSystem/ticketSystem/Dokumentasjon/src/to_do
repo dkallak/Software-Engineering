@@ -1,5 +1,5 @@
 
--Fortsette fra linje 84 på customer
+- Lage metode for å sette billett til false når billettens dato overstiger eventets dato
 
 - Sjekke om det er flere ledige plasser i et event. Husk hva hvis en kunde holder på å betale
   en billett mens en annen holder på å reservere samme billett, dette går jo ikke

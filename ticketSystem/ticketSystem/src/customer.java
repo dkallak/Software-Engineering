@@ -84,6 +84,7 @@ public class customer {
                     customer.getCurrentPayment().setBalance(customer.getCurrentPayment().getBalance());
 
                 }
+                ticket.setValid(false);
                 tickets.remove(i);
             }
         }
