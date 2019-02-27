@@ -63,6 +63,7 @@ public class customer {
     public void addTicket(ticket ticket, event event, customer customer){
 
         event.setTicketsRemaining(event.getTicketsRemaining()-1);
+
         tickets.add(ticket);
         customer.getCurrentPayment().setBalance(customer.getCurrentPayment().getBalance() - event.getPrice());
     }
@@ -76,20 +77,14 @@ public class customer {
         //event.getEventList().get(i).getEventName()
             if (tickets.get(i).getTicketID() == ticket.getTicketID()) {
 
-                tickets.remove(i);
-
                 if (tickets.get(i).isValid() == true) {
-
-                    //customer.getCurrentPayment().setBalance(customer.getCurrentPayment().getBalance() + event.getPrice());
-                    //customer.getCurrentPayment().setBalance(customer.get(i).);
-
+                    customer.getCurrentPayment().setBalance(customer.getCurrentPayment().getBalance() + event.getPrice());
                 }
-                /*
                 else {
                     customer.getCurrentPayment().setBalance(customer.getCurrentPayment().getBalance());
-                }
-                */
 
+                }
+                tickets.remove(i);
             }
         }
     }

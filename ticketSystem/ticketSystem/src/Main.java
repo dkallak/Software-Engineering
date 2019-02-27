@@ -58,25 +58,20 @@ public class Main {
         System.out.println(nemo.getTicketsRemaining());
         */
 
-
         //USE-CASE: Avbestilling/refundering
         //1 Refundering i form av penger eller goder
         //2 Billetten er nå tilgjengelig for andre
         //3
-        /*
+
         System.out.println("************************");
-        martin.cancelTicket(nemoTicket1,nemo);
-        martin.cancelTicket(nemoTicket2,nemo);
-
-        System.out.println(martin.getTickets());
-        System.out.println(nemo.getTicketsRemaining());
-        */
-        System.out.println("*****************");
         System.out.println(martin.getCurrentPayment().getBalance());
-
         martin.cancelTicket(nemoTicket1,nemo,martin);
         martin.cancelTicket(nemoTicket2,nemo,martin);
+        //martin.cancelTicket(nemoTicket2,nemo,martin);
+        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
         System.out.println(martin.getCurrentPayment().getBalance());
+        //martin.cancelTicket(nemoTicket2,nemo,martin);
+
 
     }
 }
