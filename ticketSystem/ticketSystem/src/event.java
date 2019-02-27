@@ -146,6 +146,7 @@ public class event {
         return validTickets;
     }
 
+    
     //Sjekker om den angitte billett er gyldig/ubrukt til dette eventet
     public boolean checkValid (ticket ticket) {
         int index=tickets.indexOf(ticket);
