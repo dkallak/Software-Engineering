@@ -1,3 +1,5 @@
+- oppdatere use-case diagrammer mht. til sjekk for valid ticket true/false. Utvide eventuelt use-case "kjøp billett"
+eller legg til egen
 
 - Lage metode for å sette billett til false når billettens dato overstiger eventets dato
 
