@@ -1,6 +1,8 @@
 - oppdatere use-case diagrammer mht. til sjekk for valid ticket true/false. Utvide eventuelt use-case "kjøp billett"
 eller legg til egen
 
+- legge til selge billett på use-case diagram, både til kino og til andre arrangementer
+
 - Lage metode for å sette billett til false når billettens dato overstiger eventets dato
 
 - Sjekke om det er flere ledige plasser i et event. Husk hva hvis en kunde holder på å betale
