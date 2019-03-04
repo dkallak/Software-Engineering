@@ -9,13 +9,13 @@ public class Main {
 
     public static void main(String[] args) {
         //Oppretter arragører
-        organizer festiviteten = new organizer("Festiviteten", "Gunnhild", "Hansen");
+        organizer askimKino = new organizer("askimKino", "Gunnhild", "Hansen");
         organizer dnt = new organizer("Det norske turistforeningen", "Lars", "Monsen");
 
         //Oppretter eventer
-        event nemo = new event("Oppdrag Nemo", LocalDate.of(2019,03,05),"Festiviteten", 4, 200, 200, festiviteten, 200);
-        event avatar = new event("Avatar", LocalDate.of(2019,03,06),"Festiviteten", 2, 400, 400, festiviteten, 200);
-        event rainman = new event("Rain Man", LocalDate.of(2019,12,23),"Festiviteten", 1, 200, 200, festiviteten, 100);
+        event nemo = new event("Oppdrag Nemo", LocalDate.of(2019,03,05),"Askim", 4, 200, 200, askimKino, 200);
+        event avatar = new event("Avatar", LocalDate.of(2019,03,06),"Askim", 2, 400, 400, askimKino, 200);
+        event rainman = new event("Rain Man", LocalDate.of(2019,12,23),"Askim", 1, 200, 200, askimKino, 100);
 
         event fiskePir = new event("Fiske pir", LocalDate.of(2019,07,15), "Langvannet", 300, 300, dnt,300);
 
@@ -25,9 +25,6 @@ public class Main {
 
         //Oppretter en kunde
         customer martin = new customer("Martin", "Martinsen", 23, betaling);
-
-
-
 
 
         //USE-CASE: Sjekker utvalg
@@ -42,18 +39,10 @@ public class Main {
         //System.out.println(event.getOtherEvents());
 
 
-
         //USE-CASE: Kjøpe billett
         //1 holde av billett
         //2 opprette billettobjekt
         //3 Boolean, kjøp godkjent eller ikke
-
-
-
-        /*
-        System.out.println(martin.getTickets());
-        System.out.println(nemo.getTicketsRemaining());
-        */
 
         //USE-CASE: Avbestilling/refundering
         //1 Refundering i form av penger eller goder
@@ -61,6 +50,8 @@ public class Main {
         //3
 
         //USE-CASE: Selge billett
+        cinema askim = new cinema("Askim Kino", 0);
+
         ticket nemoTicket1 = new ticket(nemo, 30, 8, martin);
         ticket pirTur2 = new ticket(fiskePir);
 
@@ -69,15 +60,27 @@ public class Main {
         System.out.println("Organizer balance: ");
         System.out.println(dnt.getOrganizerBalance());
         System.out.println("Movie balance: ");
-        System.out.println(festiviteten.getCinemaBalance());
+        System.out.println(askim.getCinemaBalance());
         System.out.println("*****************");
-        martin.addTicket(pirTur2,fiskePir);
-        dnt.sellTicket(fiskePir);
+        askim.sellTicket(martin,fiskePir, dnt,pirTur2);
+        askim.sellTicket(martin,nemo,askimKino,nemoTicket1);
+        //askim.sellTicket(nemo, festiviteten);
         martin.addTicket(nemoTicket1,nemo);
 
         System.out.println("Organizer balance: ");
         System.out.println(dnt.getOrganizerBalance());
         System.out.println("Cinema balance: ");
-        System.out.println(festiviteten.getCinemaBalance());
+        System.out.println(askim.getCinemaBalance());
+
+
+        //USE-CASE: Administrere arrangement
+
+
+
+        //USE-CASE: Registrere arrangør
+
+
+        //USE-CASE: Kontroller billett
+
     }
 }
