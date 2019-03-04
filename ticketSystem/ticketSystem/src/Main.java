@@ -77,7 +77,7 @@ public class Main {
 
         System.out.println("Organizer balance: ");
         System.out.println(dnt.getOrganizerBalance());
-        System.out.println("Movie balance: ");
+        System.out.println("Cinema balance: ");
         System.out.println(festiviteten.getCinemaBalance());
     }
 }
