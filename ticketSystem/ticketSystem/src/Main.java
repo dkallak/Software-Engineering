@@ -17,7 +17,7 @@ public class Main {
         event avatar = new event("Avatar", LocalDate.of(2019,03,06),"Festiviteten", 2, 400, 400, festiviteten, 200);
         event rainman = new event("Rain Man", LocalDate.of(2019,12,23),"Festiviteten", 1, 200, 200, festiviteten, 100);
 
-        event fiskePir = new event("Fiske pir", LocalDate.of(2019,07,15), "Langvannet", 300, 300, dnt,30);
+        event fiskePir = new event("Fiske pir", LocalDate.of(2019,07,15), "Langvannet", 300, 300, dnt,300);
 
 
         //Oppretter payment
@@ -25,6 +25,8 @@ public class Main {
 
         //Oppretter en kunde
         customer martin = new customer("Martin", "Martinsen", 23, betaling);
+
+
 
 
 
@@ -46,12 +48,7 @@ public class Main {
         //2 opprette billettobjekt
         //3 Boolean, kjøp godkjent eller ikke
 
-        System.out.println(martin.getCurrentPayment().getBalance());
 
-        ticket nemoTicket1 = new ticket(nemo, 30, 8, martin);
-        ticket nemoTicket2 = new ticket(nemo, 54, 2, martin);
-        martin.addTicket(nemoTicket1,nemo, martin);
-        martin.addTicket(nemoTicket2,nemo, martin);
 
         /*
         System.out.println(martin.getTickets());
@@ -63,27 +60,24 @@ public class Main {
         //2 Billetten er nå tilgjengelig for andre
         //3
 
-        System.out.println("************************");
-        System.out.println(martin.getCurrentPayment().getBalance());
-        martin.cancelTicket(nemoTicket1,nemo,martin);
-        martin.cancelTicket(nemoTicket2,nemo,martin);
-        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-        System.out.println(martin.getCurrentPayment().getBalance());
-        //martin.cancelTicket(nemoTicket2,nemo,martin);
+        //USE-CASE: Selge billett
+        ticket nemoTicket1 = new ticket(nemo, 30, 8, martin);
+        ticket pirTur2 = new ticket(fiskePir);
 
+        fiskePir.addTicket(pirTur2);
 
-        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        System.out.println("Organizer balance: ");
+        System.out.println(dnt.getOrganizerBalance());
+        System.out.println("Movie balance: ");
+        System.out.println(festiviteten.getCinemaBalance());
+        System.out.println("*****************");
+        martin.addTicket(pirTur2,fiskePir);
+        dnt.sellTicket(fiskePir);
+        martin.addTicket(nemoTicket1,nemo);
 
-        nemo.addTicket(nemoTicket1);
-        nemo.addTicket(nemoTicket2);
-
-
-        //Hvorfor blir billett 2 false?
-        System.out.println(nemo.checkValid(nemoTicket1));
-        System.out.println(nemo.checkValid(nemoTicket2));
-        System.out.println("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
-        System.out.println(nemo.getTickets().size());
-
-
+        System.out.println("Organizer balance: ");
+        System.out.println(dnt.getOrganizerBalance());
+        System.out.println("Movie balance: ");
+        System.out.println(festiviteten.getCinemaBalance());
     }
 }

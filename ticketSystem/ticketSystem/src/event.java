@@ -8,8 +8,9 @@ public class event {
     private int stage;
     private int totalTickets;
     private int ticketsRemaining;
-    private int price;
     private organizer organizer;
+    private boolean isMovie;
+    private int price;
     private static ArrayList<event> allEvents = new ArrayList();
     private static ArrayList<event> filmList = new ArrayList();
     private static ArrayList<event> otherEvents = new ArrayList();
@@ -29,6 +30,7 @@ public class event {
         this.totalTickets = totalTickets;
         this.ticketsRemaining = ticketsRemaining;
         this.organizer = organizer;
+        this.isMovie = true;
         event.getEventList().add(this);
         event.getFilmList().add(this);
     }
@@ -42,6 +44,7 @@ public class event {
         this.totalTickets = totalTickets;
         this.ticketsRemaining = ticketsRemaining;
         this.organizer = organizer;
+        this.isMovie = false;
         event.getEventList().add(this);
         event.getOtherEvents().add(this);
     }
@@ -61,6 +64,14 @@ public class event {
 
     public static void setFilmList(ArrayList<event> filmList) {
         event.filmList = filmList;
+    }
+
+    public boolean isMovieEvent() {
+        return isMovie;
+    }
+
+    public void setMovie(boolean movie) {
+        isMovie = movie;
     }
 
     public String getEventName() {
@@ -139,6 +150,8 @@ public class event {
         event.allEvents = allEvents;
     }
 
+
+
     //Returnerer en liste over alle eventets billetter som fortsatt er gyldige/ubrukte
     public ArrayList<ticket> getValidTickets() {
         ArrayList <ticket> validTickets = new ArrayList(tickets);
@@ -170,6 +183,7 @@ public class event {
 
     @Override
     public String toString(){
-        return "\n****************\n" + eventName + "\n" + date + "\nSted: " + location + "\n" + "Organizer: " + String.valueOf(organizer.getCompany() + "\n");
+        return "\n****************\n" + eventName + "\n" + date + "\nSted: " + location + "\n" + "Organizer: " + String.valueOf(organizer.getCompany() +
+                "\n" + isMovie);
     }
 }

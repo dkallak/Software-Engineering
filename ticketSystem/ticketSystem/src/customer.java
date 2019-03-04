@@ -60,14 +60,11 @@ public class customer {
 
 
     //Metode for kjøp av billett, gir kunden eierskap til billetten. Reduserer billettantallet
-    public void addTicket(ticket ticket, event event, customer customer){
-
-        event.setTicketsRemaining(event.getTicketsRemaining()-1);
+    public void addTicket(ticket ticket, event event){
 
         tickets.add(ticket);
-        customer.getCurrentPayment().setBalance(customer.getCurrentPayment().getBalance() - event.getPrice());
+        this.getCurrentPayment().setBalance(this.getCurrentPayment().getBalance() - event.getPrice());
     }
-
 
     //Metode for kansellering av billett. Øker billettantallet
     public void cancelTicket (ticket ticket, event event, customer customer) {
