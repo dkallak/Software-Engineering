@@ -67,7 +67,7 @@ public class customer {
     }
 
     //Metode for kansellering av billett. Øker billettantallet
-    public void cancelTicket (ticket ticket, event event, customer customer) {
+    public void cancelTicket (ticket ticket, event event) {
 
         event.setTicketsRemaining(event.getTicketsRemaining()+1);
         for (int i = 0; i < tickets.size(); i++) {
@@ -75,7 +75,7 @@ public class customer {
             if (tickets.get(i).getTicketID() == ticket.getTicketID()) {
 
                 if (tickets.get(i).isValid() == true) {
-                    customer.getCurrentPayment().setBalance(customer.getCurrentPayment().getBalance() + event.getPrice());
+                    this.getCurrentPayment().setBalance(this.getCurrentPayment().getBalance() + event.getPrice());
                 }
                 else {
                     System.out.println("Beklager, det har skjedd en feil");
