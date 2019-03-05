@@ -50,7 +50,7 @@ public class Main {
         //3
 
         //USE-CASE: Selge billett
-        cinema askim = new cinema("Askim Kino", 0);
+        cinema askim = new cinema("Nordisk Film", "Gunnhild", "Hansen", "Askim Kino", 0);
 
         ticket nemoTicket1 = new ticket(nemo, 30, 8, martin);
         ticket pirTur2 = new ticket(fiskePir);
@@ -63,7 +63,7 @@ public class Main {
         System.out.println(askim.getCinemaBalance());
         System.out.println("*****************");
         askim.sellTicket(martin,fiskePir, dnt,pirTur2);
-        askim.sellTicket(martin,nemo,askimKino,nemoTicket1);
+        //askim.sellTicket(martin,nemo,askim,nemoTicket1);
         //askim.sellTicket(nemo, festiviteten);
         martin.addTicket(nemoTicket1,nemo);
 

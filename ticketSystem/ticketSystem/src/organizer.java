@@ -18,6 +18,10 @@ public class organizer {
         this.referenceLastname = referenceLastname;
     }
 
+    public organizer(String company) {
+        this.company = company;
+    }
+
     public String getCompany() {
         return company;
     }

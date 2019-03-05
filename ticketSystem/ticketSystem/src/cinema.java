@@ -1,10 +1,11 @@
-public class cinema {
+public class cinema extends organizer{
 
 
     private String cinemaName;
     private int cinemaBalance;
 
-    public cinema(String cinemaName, int cinemaBalance) {
+    public cinema(String company, String referenceFirstname, String referenceLastname,String cinemaName, int cinemaBalance) {
+        super(company, referenceFirstname, referenceLastname);
         this.cinemaName = cinemaName;
         this.cinemaBalance = cinemaBalance;
     }
