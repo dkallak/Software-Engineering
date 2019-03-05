@@ -71,9 +71,11 @@ public class Main {
         System.out.println(dnt.getOrganizerBalance());
         System.out.println("Cinema balance: ");
         System.out.println(askim.getCinemaBalance());
-        nemoTicket1.isValid();
-        System.out.println(nemoTicket1.isValid());
 
+        //SEKVENS DIAGRAM FOR KONTROLLERE BILLETT
+        nemo.addTicketToTicketlist(nemoTicket1);
+        martin.cancelTicket(nemoTicket1,nemo );
+        nemo.checkValid(nemoTicket1);
 
         //USE-CASE: Administrere arrangement
 
