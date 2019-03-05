@@ -55,7 +55,7 @@ public class Main {
         ticket nemoTicket1 = new ticket(nemo, 30, 8, martin);
         ticket pirTur2 = new ticket(fiskePir);
 
-        fiskePir.addTicket(pirTur2);
+        fiskePir.addTicketToTicketlist(pirTur2);
 
         System.out.println("Organizer balance: ");
         System.out.println(dnt.getOrganizerBalance());
@@ -71,6 +71,8 @@ public class Main {
         System.out.println(dnt.getOrganizerBalance());
         System.out.println("Cinema balance: ");
         System.out.println(askim.getCinemaBalance());
+        nemoTicket1.isValid();
+        System.out.println(nemoTicket1.isValid());
 
 
         //USE-CASE: Administrere arrangement

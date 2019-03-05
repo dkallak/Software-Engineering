@@ -78,7 +78,7 @@ public class customer {
                     customer.getCurrentPayment().setBalance(customer.getCurrentPayment().getBalance() + event.getPrice());
                 }
                 else {
-                    customer.getCurrentPayment().setBalance(customer.getCurrentPayment().getBalance());
+                    System.out.println("Beklager, det har skjedd en feil");
 
                 }
                 ticket.setValid(false);

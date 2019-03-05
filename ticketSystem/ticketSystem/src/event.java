@@ -177,7 +177,7 @@ public class event {
     }
 
     //Brukes til å administrere hvilke billetter som er gyldige for dette event
-    public void addTicket(ticket ticket){
+    public void addTicketToTicketlist(ticket ticket){
         tickets.add(ticket);
     }
 
