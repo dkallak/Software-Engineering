@@ -79,10 +79,7 @@ public class Main {
 
         //USE-CASE: Administrere arrangement
 
-
-
         //USE-CASE: Registrere arrangør
-
 
         //USE-CASE: Kontroller billett
 

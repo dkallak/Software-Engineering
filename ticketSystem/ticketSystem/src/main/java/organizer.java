@@ -9,7 +9,7 @@ public class organizer {
     private int organizerBalance;
 
     //Skal ikke være static fordi hver organizer har forskjellige lister over events som de eier
-    private ArrayList<event> events = new ArrayList<>();
+    private ArrayList<event> events = new ArrayList<event>();
 
 
     public organizer(String company, String referenceFirstname, String referenceLastname) {

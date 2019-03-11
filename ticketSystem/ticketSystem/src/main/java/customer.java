@@ -7,7 +7,7 @@ public class customer {
     private String firstName;
     private String lastName;
     private int age;
-    private ArrayList<ticket> tickets = new ArrayList<>();
+    private ArrayList<ticket> tickets = new ArrayList<ticket>();
 
     public customer(String firstName, String lastName, int age, payment currentPayment) {
         this.currentPayment = currentPayment;
