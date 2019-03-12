@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.time.LocalDate;
 
 import static org.junit.Assert.assertEquals;
-public class billettTest {
+public class dummyTest {
 
 
     @Test
