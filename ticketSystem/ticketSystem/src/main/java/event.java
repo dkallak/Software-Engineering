@@ -155,7 +155,7 @@ public class event {
     //Returnerer en liste over alle eventets billetter som fortsatt er gyldige/ubrukte
     public ArrayList<ticket> getValidTickets() {
         ArrayList <ticket> validTickets = new ArrayList(tickets);
-        for (int i = 0; i < tickets.size(); i++){
+        for (int i = 1; i < tickets.size(); i++){
             if(tickets.get(i).isValid()) {
                 validTickets.add(tickets.get(i));
             }
@@ -184,6 +184,6 @@ public class event {
     @Override
     public String toString(){
         return "\n****************\n" + eventName + "\n" + date + "\nSted: " + location + "\n" + "Organizer: " + String.valueOf(organizer.getCompany() +
-                "\n" + isMovie);
+                "\nEr det en film? " + isMovie);
     }
 }
