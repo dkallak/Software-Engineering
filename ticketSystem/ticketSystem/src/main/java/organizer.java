@@ -34,8 +34,6 @@ public class organizer {
         return organizerBalance;
     }
 
-
-
     public String getFirstName() {
         return referenceFirstname;
     }
@@ -56,11 +54,13 @@ public class organizer {
         this.organizerBalance = organizerBalance;
     }
 
+    public ArrayList<event> getEvents() {
+        return events;
+    }
+
     public void addEvent(event event){
         events.add(event);
     }
-
-
 
     @Override
     public String toString(){
