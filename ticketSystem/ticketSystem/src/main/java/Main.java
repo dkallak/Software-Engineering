@@ -57,20 +57,24 @@ public class Main {
 
         fiskePir.addTicketToTicketlist(pirTur2);
 
+        /*
         System.out.println("Organizer balance: ");
         System.out.println(dnt.getOrganizerBalance());
         System.out.println("Movie balance: ");
         System.out.println(askim.getCinemaBalance());
+        */
         System.out.println("*****************");
         askim.sellTicket(martin,fiskePir, dnt,pirTur2);
         //askim.sellTicket(martin,nemo,askim,nemoTicket1);
         //askim.sellTicket(nemo, festiviteten);
         martin.addTicket(nemoTicket1,nemo);
 
+        /*
         System.out.println("Organizer balance: ");
         System.out.println(dnt.getOrganizerBalance());
         System.out.println("Cinema balance: ");
         System.out.println(askim.getCinemaBalance());
+        */
 
         //SEKVENS DIAGRAM FOR KONTROLLERE BILLETT
         nemo.addTicketToTicketlist(nemoTicket1);
@@ -82,6 +86,34 @@ public class Main {
         //USE-CASE: Registrere arrangør
 
         //USE-CASE: Kontroller billett
+
+
+
+
+
+
+        organizer studentParlamentet = new organizer("Studentparlamentet");
+
+        event tripToIbiza = new event("Trip to Ibiza", LocalDate.of(2019, 06, 12), "Ibiza", 400, 400, studentParlamentet, 3400);
+
+        cinema drammenKino = new cinema("Nordic films", "Kjell", "Eriksen", "Drammen Kino", 300000);
+
+        payment magnePayment = new payment("Magne Samuelsen", 7111, 2017, 2016, 566, 4400);
+
+        customer magne = new customer("Magne", "Samuelsen",52, magnePayment);
+
+        ticket ibizaTicket1 = new ticket(tripToIbiza, 2, 14, magne);
+
+
+
+        //System.out.println(tripToIbiza.checkValid(ibizaTicket1));
+
+        //tripToIbiza.addTicketToTicketlist(ibizaTicket1);
+
+        tripToIbiza.addTicketToTicketlist(ibizaTicket1);
+
+        System.out.println(tripToIbiza.getValidTickets());
+
 
     }
 }

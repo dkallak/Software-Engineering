@@ -19,7 +19,7 @@ public class paymentTest {
         ticket billett1Nordby = new ticket(tripToNordby);
 
         payment balanceOfJahn = new payment("Jahn Teigen", 4112, 2015, 2025, 123, 5000);
-        
+
         customer jahnTeigen = new customer("Jahn", "Teigen", 69, balanceOfJahn);
 
         jahnTeigen.addTicket(billett1Nordby, tripToNordby);
