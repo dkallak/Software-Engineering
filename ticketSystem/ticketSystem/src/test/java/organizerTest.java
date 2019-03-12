@@ -3,12 +3,10 @@ import org.junit.Test;
 
 import java.time.LocalDate;
 
-public class paymentTest {
+public class organizerTest {
 
     @Test
     public void doesBalanceChange() {
-        // Checks wether the customer does have enough money to pay for a ticket.
-        // If he does, he will buy the ticket. If not, he won't be able to buy it
 
 
         organizer denNorskeTurforeningen = new organizer("Den norske turforeningen", "Henning", "Kvitnes");
@@ -21,9 +19,9 @@ public class paymentTest {
 
         customer jahnTeigen = new customer("Jahn", "Teigen", 69, balanceOfJahn);
 
-        jahnTeigen.addTicket(billett1Nordby, tripToNordby);
+        denNorskeTurforeningen.addEvent(tripToNordby);
 
-        Assert.assertEquals(jahnTeigen.getCurrentPayment().getBalance(), 4910);
+        Assert.assertEquals(denNorskeTurforeningen.getEvents().size(), 1);
     }
 
 }
