@@ -35,7 +35,20 @@ public class billettTest {
         pirtur.addTicketToTicketlist(pirturBillett1);
 
         Assert.assertEquals(2, ticket.getTicketlist().size());
+    }
 
+    @Test
+    public void addTicketTest() {
+        payment betaling = new payment("Geir", 222, 2,2,2,2000);
+        organizer fredrikstadKino = new organizer("Fredrikstad Kino", "Gunnhild", "Hansen");
+        event batman = new event("Batman Origins", LocalDate.of(2019, 02, 05), "Fredrikstad", 50, 50, fredrikstadKino, 200);
+        customer geir = new customer("Geir", "Kirksæther", 39, betaling);
+        ticket bilett1 = new ticket(batman, 20, 8, geir);
+
+
+        geir.addTicket(bilett1, batman);
+
+        Assert.assertEquals(1, geir.getTickets().size());
     }
 
     @Test
