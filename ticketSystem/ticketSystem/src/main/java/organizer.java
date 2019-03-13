@@ -11,6 +11,7 @@ public class organizer {
     //Skal ikke være static fordi hver organizer har forskjellige lister over events som de eier
     private ArrayList<event> events = new ArrayList<event>();
 
+    
 
     public organizer(String company, String referenceFirstname, String referenceLastname) {
         this.company = company;
