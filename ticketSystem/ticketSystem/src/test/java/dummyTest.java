@@ -24,7 +24,7 @@ public class dummyTest {
 
         organizer torarne = new organizer("Tor Arne AS", "Tor Arne", "Moxheim");
 
-        event pirtur = new event("Pirtur", LocalDate.of(2019,2,2),"Drammen",200,200,torarne,50, false);
+        event pirtur = new event("Pirtur", LocalDate.of(2019,2,2),"Drammen",200,200,torarne,50);
 
         ticket pirturBillett = new ticket(pirtur);
         ticket pirturBillett1 = new ticket(pirtur);
@@ -45,7 +45,7 @@ public class dummyTest {
 
         organizer torarne = new organizer("Tor Arne AS", "Tor Arne", "Moxheim");
 
-        event pirtur = new event("Pirtur", LocalDate.of(2019,2,2),"Drammen",200,200,torarne,50, false);
+        event pirtur = new event("Pirtur", LocalDate.of(2019,2,2),"Drammen",200,200,torarne,50);
 
         ticket pirturBillett = new ticket(pirtur);
 
@@ -55,11 +55,11 @@ public class dummyTest {
 
         cinema askimKino = new cinema("Askim Kino", "Han som kler seg ut som Elvis","Presley","Askim Kino",200000);
 
-        martin.addTicket(pirturBillett,pirtur, betaling);
+        martin.addTicket(pirturBillett,pirtur);
 
         pirtur.addTicketToTicketlist(pirturBillett);
 
-        askimKino.sellTicket(martin,pirtur,torarne,pirturBillett, betaling);
+        askimKino.sellTicket(martin,pirtur,torarne,pirturBillett);
 
         Assert.assertEquals(pirtur.getTicketsRemaining(), pirtur.getTicketsRemaining());
     }
