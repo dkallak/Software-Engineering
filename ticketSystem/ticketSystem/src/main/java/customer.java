@@ -60,10 +60,15 @@ public class customer {
 
 
     //Metode for kjøp av billett, gir kunden eierskap til billetten. Reduserer billettantallet
-    public void addTicket(ticket ticket, event event){
+    public void addTicket(ticket ticket, event event, payment payment){
 
-        tickets.add(ticket);
-        this.getCurrentPayment().setBalance(this.getCurrentPayment().getBalance() - event.getPrice());
+        if (payment.getBalance() > event.getPrice()) {
+            tickets.add(ticket);
+            this.getCurrentPayment().setBalance(this.getCurrentPayment().getBalance() - event.getPrice());
+        }
+        else {
+            System.out.println("Du har ikke nok penger på kortet ditt, gutten min!");
+        }
     }
 
     //Metode for kansellering av billett. Øker billettantallet

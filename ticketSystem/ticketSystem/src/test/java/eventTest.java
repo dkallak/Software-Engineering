@@ -17,7 +17,7 @@ public class eventTest {
     */
 
     organizer studentParlamentet = new organizer("Studentparlamentet");
-    event tripToIbiza = new event("Trip to Ibiza", LocalDate.of(2019, 06, 12), "Ibiza", 400, 400, studentParlamentet, 3400);
+    event tripToIbiza = new event("Trip to Ibiza", LocalDate.of(2019, 06, 12), "Ibiza", 400, 400, studentParlamentet, 3400, false);
     cinema drammenKino = new cinema("Nordic films", "Kjell", "Eriksen", "Drammen Kino", 300000);
     payment magnePayment = new payment("Magne Samuelsen", 7111, 2017, 2016, 566, 4400);
     customer magne = new customer("Magne", "Samuelsen", 52, magnePayment);
@@ -25,19 +25,11 @@ public class eventTest {
 
 
     @Test
-    public void showValidTickets() {
-
-        tripToIbiza.addTicketToTicketlist(ibizaTicket1);
-
-        Assert.assertEquals(tripToIbiza.getValidTickets().size(), 1);
-    }
-
-    @Test
     public void isTicketAddedToTicketlist() {
 
         tripToIbiza.addTicketToTicketlist(ibizaTicket1);
 
-        Assert.assertEquals(tripToIbiza.getTickets().size(), 1);
+        Assert.assertEquals(1, tripToIbiza.getTickets().size());
     }
 
 
@@ -46,7 +38,7 @@ public class eventTest {
 
         tripToIbiza.addTicketToTicketlist(ibizaTicket1);
 
-        Assert.assertEquals(tripToIbiza.checkValid(ibizaTicket1), true);
+        Assert.assertEquals(true, tripToIbiza.checkValid(ibizaTicket1));
     }
 }
 

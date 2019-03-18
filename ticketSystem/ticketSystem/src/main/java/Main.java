@@ -13,11 +13,11 @@ public class Main {
         organizer dnt = new organizer("Det norske turistforeningen", "Lars", "Monsen");
 
         //Oppretter eventer
-        event nemo = new event("Oppdrag Nemo", LocalDate.of(2019,03,05),"Askim", 4, 200, 200, askimKino, 200);
-        event avatar = new event("Avatar", LocalDate.of(2019,03,06),"Askim", 2, 400, 400, askimKino, 200);
-        event rainman = new event("Rain Man", LocalDate.of(2019,12,23),"Askim", 1, 200, 200, askimKino, 100);
+        event nemo = new event("Oppdrag Nemo", LocalDate.of(2019,03,05),"Askim", 4, 200, 200, askimKino, 200, true);
+        event avatar = new event("Avatar", LocalDate.of(2019,03,06),"Askim", 2, 400, 400, askimKino, 200, true);
+        event rainman = new event("Rain Man", LocalDate.of(2019,12,23),"Askim", 1, 200, 200, askimKino, 100, true);
 
-        event fiskePir = new event("Fiske pir", LocalDate.of(2019,07,15), "Langvannet", 300, 300, dnt,300);
+        event fiskePir = new event("Fiske pir", LocalDate.of(2019,07,15), "Langvannet", 300, 300, dnt,300, false);
 
 
         //Oppretter payment
@@ -64,10 +64,10 @@ public class Main {
         System.out.println(askim.getCinemaBalance());
         */
         System.out.println("*****************");
-        askim.sellTicket(martin,fiskePir, dnt,pirTur2);
+        askim.sellTicket(martin,fiskePir, dnt,pirTur2, betaling);
         //askim.sellTicket(martin,nemo,askim,nemoTicket1);
         //askim.sellTicket(nemo, festiviteten);
-        martin.addTicket(nemoTicket1,nemo);
+        martin.addTicket(nemoTicket1,nemo, betaling);
 
         /*
         System.out.println("Organizer balance: ");
@@ -94,7 +94,7 @@ public class Main {
 
         organizer studentParlamentet = new organizer("Studentparlamentet");
 
-        event tripToIbiza = new event("Trip to Ibiza", LocalDate.of(2019, 06, 12), "Ibiza", 400, 400, studentParlamentet, 3400);
+        event tripToIbiza = new event("Trip to Ibiza", LocalDate.of(2019, 06, 12), "Ibiza", 400, 400, studentParlamentet, 3400, false);
 
         cinema drammenKino = new cinema("Nordic films", "Kjell", "Eriksen", "Drammen Kino", 300000);
 
