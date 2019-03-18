@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
-//nfdsofndsklfdsnokfds
+
     public static void main(String[] args) {
         //Oppretter arragører
         organizer askimKino = new organizer("askimKino", "Gunnhild", "Hansen");
