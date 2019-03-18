@@ -24,8 +24,7 @@ public class eventTest {
     ticket ibizaTicket1 = new ticket(tripToIbiza, 2, 14, magne);
 
 
-
-
+    
     @Test
     public void isTicketAddedToTicketlist() {
 
