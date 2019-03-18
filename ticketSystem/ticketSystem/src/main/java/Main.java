@@ -19,7 +19,7 @@ public class Main {
 
         event fiskePir = new event("Fiske pir", LocalDate.of(2019,07,15), "Langvannet", 300, 300, dnt,300, false);
 
-            
+
 
         //Oppretter payment
         payment betaling = new payment("martin", 222, 2,2,2,2000);

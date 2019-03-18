@@ -24,6 +24,7 @@ Legger til billetter til nemo
 nemo.addTicket(nemoTicket1);
 nemo.addTicket(nemoTicket2);
 
+
 //Sjekker om billetter er gyldige (etter avbestilling)
 System.out.println(nemo.checkValid(nemoTicket1));
 System.out.println(nemo.checkValid(nemoTicket2));
