@@ -90,8 +90,6 @@ public class Main {
 
 
 
-
-
         organizer studentParlamentet = new organizer("Studentparlamentet");
 
         event tripToIbiza = new event("Trip to Ibiza", LocalDate.of(2019, 06, 12), "Ibiza", 400, 400, studentParlamentet, 3400, false);
