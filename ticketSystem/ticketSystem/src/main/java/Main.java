@@ -69,6 +69,7 @@ public class Main {
         //askim.sellTicket(nemo, festiviteten);
         martin.addTicket(nemoTicket1,nemo, betaling);
 
+
         /*
         System.out.println("Organizer balance: ");
         System.out.println(dnt.getOrganizerBalance());
@@ -110,9 +111,13 @@ public class Main {
 
         //tripToIbiza.addTicketToTicketlist(ibizaTicket1);
 
-        tripToIbiza.addTicketToTicketlist(ibizaTicket1);
+        //tripToIbiza.addTicketToTicketlist(ibizaTicket1);
 
-        System.out.println(tripToIbiza.getValidTickets());
+        //System.out.println(tripToIbiza.getValidTickets());
+
+        System.out.println(askim.getEvents());
+
+        System.out.println(event.getFilmList());
 
 
     }
