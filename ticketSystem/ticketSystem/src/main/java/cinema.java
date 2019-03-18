@@ -26,9 +26,9 @@ public class cinema extends organizer{
         this.cinemaBalance = cinemaBalance;
     }
 
-    public void sellTicket (customer customer, event event, organizer organizer, ticket ticket) {
+    public void sellTicket (customer customer, event event, organizer organizer, ticket ticket, payment payment) {
 
-        customer.addTicket(ticket,event);
+        customer.addTicket(ticket,event, payment);
 
         event.setTicketsRemaining(event.getTicketsRemaining()-1);
 

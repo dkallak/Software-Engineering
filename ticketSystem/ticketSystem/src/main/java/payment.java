@@ -65,19 +65,6 @@ public class payment {
         this.balance = balance;
     }
 
-    public static String checkBalance (int ticketprice, int accountbalance) {
-
-        if (ticketprice >  accountbalance) {
-            return "Du har ikke dekning på kortet";
-        }
-
-        else {
-            accountbalance = accountbalance - ticketprice;
-            return "Gratulerer med kjøpet av billett"+
-                    "\nDu har nå " + accountbalance + " kroner igjen på kortet";
-        }
-    }
-
     @Override
     public String toString() {
         return "Navn: " + cardNumber +

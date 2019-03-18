@@ -21,7 +21,7 @@ public class event {
     //private ArrayList<ticket> tickets = new ArrayList<>();
 
     //Constructor for all movies
-    public event(String eventName, LocalDate date, String location, int stage, int totalTickets, int ticketsRemaining, organizer organizer, int price) {
+    public event(String eventName, LocalDate date, String location, int stage, int totalTickets, int ticketsRemaining, organizer organizer, int price, boolean isMovie) {
         this.eventName = eventName;
         this.date = date;
         this.location = location;
@@ -30,13 +30,13 @@ public class event {
         this.totalTickets = totalTickets;
         this.ticketsRemaining = ticketsRemaining;
         this.organizer = organizer;
-        this.isMovie = true;
+        this.isMovie = isMovie;
         event.getEventList().add(this);
         event.getFilmList().add(this);
     }
 
     //Constuctor for all other events
-    public event(String eventName, LocalDate date, String location, int totalTickets, int ticketsRemaining, organizer organizer, int price) {
+    public event(String eventName, LocalDate date, String location, int totalTickets, int ticketsRemaining, organizer organizer, int price, boolean isMovie) {
         this.eventName = eventName;
         this.date = date;
         this.location = location;
@@ -44,7 +44,7 @@ public class event {
         this.totalTickets = totalTickets;
         this.ticketsRemaining = ticketsRemaining;
         this.organizer = organizer;
-        this.isMovie = false;
+        this.isMovie = isMovie;
         event.getEventList().add(this);
         event.getOtherEvents().add(this);
     }
@@ -154,8 +154,11 @@ public class event {
 
     //Returnerer en liste over alle eventets billetter som fortsatt er gyldige/ubrukte
     public ArrayList<ticket> getValidTickets() {
+
         ArrayList <ticket> validTickets = new ArrayList(tickets);
+
         for (int i = 1; i < tickets.size(); i++){
+
             if(tickets.get(i).isValid()) {
                 validTickets.add(tickets.get(i));
             }
