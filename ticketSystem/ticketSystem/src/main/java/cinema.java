@@ -36,7 +36,7 @@ public class cinema extends organizer{
             this.setCinemaBalance(this.getCinemaBalance() + event.getPrice());
 
         }
-        
+
         else if (event.isMovieEvent() == false) {
 
             organizer.setOrganizerBalance(organizer.getOrganizerBalance() + (event.getPrice() * 80 / 100));
