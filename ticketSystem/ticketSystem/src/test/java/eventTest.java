@@ -23,7 +23,7 @@ public class eventTest {
 
         tripToIbiza.addTicketToTicketlist(ibizaTicket1);
 
-        Assert.assertEquals(1, tripToIbiza.getTickets().size());
+        Assert.assertEquals(1, tripToIbiza.getTicketsForEvent().size());
     }
 
 

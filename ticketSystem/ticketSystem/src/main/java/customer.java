@@ -16,12 +16,6 @@ public class customer {
         this.age = age;
     }
 
-    public customer(String firstName, String lastName, int age) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-    }
-
     public String getFirstName() {
         return firstName;
     }

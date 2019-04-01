@@ -36,7 +36,7 @@ public class customerTest {
 
     @Test
     // Test for updating tickets remaining after selling, then cancel a ticket
-    public void Tickets_Remaining_gets_updated() {
+    public void TicketsRemainingGetsUpdated() {
 
         int tickets_left = batman.getTicketsRemaining();
 
@@ -47,7 +47,7 @@ public class customerTest {
     }
 
     @Test
-    public void Ticket_gets_removed_from_list_when_canceling() {
+    public void TicketGetsRemovedFromListWhenCanceling() {
 
         int tickets_in_list = geir.getTickets().size();
 

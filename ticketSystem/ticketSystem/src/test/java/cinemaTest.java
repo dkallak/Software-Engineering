@@ -5,7 +5,7 @@ import java.time.LocalDate;
 
 public class cinemaTest {
 
-    organizer denNorskeTurforeningen = new organizer("Den norske turforeningen", "Henning", "Kvitnes");
+    organizer denNorskeTurforeningen = new organizer("Den norske turforeningen", "Henning", "Kvitnes", 1000);
     cinema askimKino = new cinema("Nordisk Film", "Robert", "Hansen", "Askim kino", 200000);
     event tripToNordby = new event("Tur til Nordby", LocalDate.of(2019,06,15), "Nordby", 70, 70, denNorskeTurforeningen, 90, false);
     ticket billett1Nordby = new ticket(tripToNordby);
@@ -38,7 +38,7 @@ public class cinemaTest {
 
         askimKino.sellTicket(jahnTeigen, avatar, askimKino, avatarTicket1, balanceOfJahn);
 
-        Assert.assertEquals(250150, askimKino.getCinemaBalance());
+        Assert.assertEquals(250150, askimKino.getOrganizerBalance());
 
     }
 
@@ -50,11 +50,11 @@ public class cinemaTest {
         cinema askimKino = new cinema("Askim Kino", "Jarle", "Pedersen", "Askim Kino", 250000);
 
         int ticketPrice = avatar.getPrice();
-        int askimBalanse = askimKino.getCinemaBalance() + ticketPrice;
+        int askimBalanse = askimKino.getOrganizerBalance() + ticketPrice;
 
         askimKino.sellTicket(jahnTeigen, avatar, askimKino, avatarTicket1, balanceOfJahn);
 
-        Assert.assertEquals(askimBalanse, askimKino.getCinemaBalance());
+        Assert.assertEquals(askimBalanse, askimKino.getOrganizerBalance());
     }
 
     @Test
@@ -63,11 +63,11 @@ public class cinemaTest {
         cinema askimKino = new cinema("Askim Kino", "Jarle", "Pedersen", "Askim Kino", 250000);
 
         int priceCut = tripToNordby.getPrice() * 20 / 100; // = 18
-        int askimBalanse = askimKino.getCinemaBalance() + priceCut; // 250000 + 18 = 250018
+        int askimBalanse = askimKino.getOrganizerBalance() + priceCut; // 250000 + 18 = 250018
 
         askimKino.sellTicket(jahnTeigen, tripToNordby, askimKino, billett1Nordby, balanceOfJahn);
 
-        Assert.assertEquals(askimBalanse, askimKino.getCinemaBalance());
+        Assert.assertEquals(askimBalanse, askimKino.getOrganizerBalance());
 
     }
 

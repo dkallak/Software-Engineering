@@ -4,18 +4,18 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class ticket {
 
-    private static final AtomicInteger teller = new AtomicInteger(6783);
+    private static final AtomicInteger teller = new AtomicInteger(1000);
     private final int ticketID;
     private customer ticketHolder;
     private int seatNumber;
     private int row;
     private boolean valid;
-    private event etEvent;
+    private event ticketOfEvent;
     private static ArrayList<ticket> ticketlist = new ArrayList();
 
 
     public ticket(event etEvent, int seatNumber, int row, customer ticketHolder) {
-        this.etEvent = etEvent;
+        this.ticketOfEvent = etEvent;
         this.seatNumber = seatNumber;
         this.row = row;
         this.ticketHolder = ticketHolder;
@@ -25,7 +25,7 @@ public class ticket {
     }
 
     public ticket(event etEvent) {
-        this.etEvent = etEvent;
+        this.ticketOfEvent = etEvent;
         this.valid = true;
         this.ticketID = teller.incrementAndGet();
         ticketlist.add(this);
@@ -71,7 +71,7 @@ public class ticket {
 
     @Override
     public String toString() {
-        return "Navn: " + etEvent.getEventName() +
+        return "Navn: " + ticketOfEvent.getEventName() +
                 "\nSetenummer: " + seatNumber +
                 "\nRad: " + row +
                 "\nBilletten er: " + valid +

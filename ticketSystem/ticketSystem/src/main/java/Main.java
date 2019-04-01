@@ -1,3 +1,5 @@
+import javax.swing.*;
+import java.awt.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -8,9 +10,10 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+
         //Oppretter arragører
-        organizer askimKino = new organizer("askimKino", "Gunnhild", "Hansen");
-        organizer dnt = new organizer("Det norske turistforeningen", "Lars", "Monsen");
+        cinema askimKino = new cinema("Askim Kino", "Nordisk Film", "Gunhild", "Hansen", 2000);
+        organizer dnt = new organizer("Det norske turistforeningen", "Lars", "Monsen", 1000);
 
         //Oppretter eventer
         event nemo = new event("Oppdrag Nemo", LocalDate.of(2019,03,05),"Askim", 4, 200, 200, askimKino, 200, true);
@@ -64,7 +67,7 @@ public class Main {
         System.out.println("Movie balance: ");
         System.out.println(askim.getCinemaBalance());
         */
-        System.out.println("*****************");
+        //System.out.println("*****************");
         askim.sellTicket(martin,fiskePir, dnt,pirTur2, betaling);
         //askim.sellTicket(martin,nemo,askim,nemoTicket1);
         //askim.sellTicket(nemo, festiviteten);
@@ -111,7 +114,7 @@ public class Main {
 
         tripToIbiza.addTicketToTicketlist(ibizaTicket1);
 
-        System.out.println(tripToIbiza.getValidTickets());
+        //System.out.println(tripToIbiza.getValidTickets());
 
 
     }

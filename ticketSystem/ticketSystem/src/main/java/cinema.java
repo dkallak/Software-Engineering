@@ -1,13 +1,10 @@
 public class cinema extends organizer{
 
-
     private String cinemaName;
-    private int cinemaBalance;
 
-    public cinema(String company, String referenceFirstname, String referenceLastname,String cinemaName, int cinemaBalance) {
-        super(company, referenceFirstname, referenceLastname);
+    public cinema(String cinemaName, String company, String referenceFirstname, String referenceLastname, int organizerBalance) {
+        super(company, referenceFirstname, referenceLastname, organizerBalance);
         this.cinemaName = cinemaName;
-        this.cinemaBalance = cinemaBalance;
     }
 
     public String getCinemaName() {
@@ -18,13 +15,7 @@ public class cinema extends organizer{
         this.cinemaName = cinemaName;
     }
 
-    public int getCinemaBalance() {
-        return cinemaBalance;
-    }
 
-    public void setCinemaBalance(int cinemaBalance) {
-        this.cinemaBalance = cinemaBalance;
-    }
 
     public void sellTicket (customer customer, event event, organizer organizer, ticket ticket, payment payment) {
 
@@ -33,14 +24,14 @@ public class cinema extends organizer{
         event.setTicketsRemaining(event.getTicketsRemaining()-1);
 
         if (event.isMovieEvent() == true) {
-            this.setCinemaBalance(this.getCinemaBalance() + event.getPrice());
+            this.setOrganizerBalance(this.getOrganizerBalance() + event.getPrice());
 
         }
 
         else if (event.isMovieEvent() == false) {
 
             organizer.setOrganizerBalance(organizer.getOrganizerBalance() + (event.getPrice() * 80 / 100));
-            this.setCinemaBalance(this.getCinemaBalance() + (event.getPrice() * 20 / 100));
+            this.setOrganizerBalance(this.getOrganizerBalance() + (event.getPrice() * 20 / 100));
         }
     }
 

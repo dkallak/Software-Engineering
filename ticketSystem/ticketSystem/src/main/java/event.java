@@ -15,7 +15,7 @@ public class event {
     private static ArrayList<event> filmList = new ArrayList();
     private static ArrayList<event> otherEvents = new ArrayList();
 
-    private ArrayList<ticket> tickets = new ArrayList();
+    private ArrayList<ticket> ticketsForEvent = new ArrayList();
 
     //Fjernes fordi at vi i ticket.java så holder vi styr på om billetten faktisk har blitt brukt
     //private ArrayList<ticket> tickets = new ArrayList<>();
@@ -31,12 +31,13 @@ public class event {
         this.ticketsRemaining = ticketsRemaining;
         this.organizer = organizer;
         this.isMovie = isMovie;
-        event.getEventList().add(this);
+        event.getAllEvents().add(this);
         event.getFilmList().add(this);
     }
 
     //Constuctor for all other events
-    public event(String eventName, LocalDate date, String location, int totalTickets, int ticketsRemaining, organizer organizer, int price, boolean isMovie) {
+    public event(String eventName, LocalDate date, String location, int totalTickets, int ticketsRemaining,
+                 organizer organizer, int price, boolean isMovie) {
         this.eventName = eventName;
         this.date = date;
         this.location = location;
@@ -45,7 +46,7 @@ public class event {
         this.ticketsRemaining = ticketsRemaining;
         this.organizer = organizer;
         this.isMovie = isMovie;
-        event.getEventList().add(this);
+        event.getAllEvents().add(this);
         event.getOtherEvents().add(this);
     }
 
@@ -98,8 +99,8 @@ public class event {
         this.price = price;
     }
 
-    public ArrayList<ticket> getTickets() {
-        return tickets;
+    public ArrayList<ticket> getTicketsForEvent() {
+        return ticketsForEvent;
     }
 
     public int getTotalTickets() {
@@ -142,7 +143,7 @@ public class event {
         return price;
     }
 
-    public static ArrayList<event> getEventList() {
+    public static ArrayList<event> getAllEvents() {
         return allEvents;
     }
 
@@ -155,12 +156,12 @@ public class event {
     //Returnerer en liste over alle eventets billetter som fortsatt er gyldige/ubrukte
     public ArrayList<ticket> getValidTickets() {
 
-        ArrayList <ticket> validTickets = new ArrayList(tickets);
+        ArrayList <ticket> validTickets = new ArrayList(ticketsForEvent);
 
-        for (int i = 1; i < tickets.size(); i++){
+        for (int i = 1; i < ticketsForEvent.size(); i++){
 
-            if(tickets.get(i).isValid()) {
-                validTickets.add(tickets.get(i));
+            if(ticketsForEvent.get(i).isValid()) {
+                validTickets.add(ticketsForEvent.get(i));
             }
         }
         return validTickets;
@@ -169,9 +170,9 @@ public class event {
     //Sjekker om den angitte billett er gyldig/ubrukt til dette eventet
     public boolean checkValid (ticket ticket) {
 
-        int index=tickets.indexOf(ticket);
+        int index = ticketsForEvent.indexOf(ticket);
 
-            while (tickets.get(index).isValid()){
+            while (ticketsForEvent.get(index).isValid()){
                 System.out.println("Denne billetten er gyldig");
                 return true;
             }
@@ -181,12 +182,12 @@ public class event {
 
     //Brukes til å administrere hvilke billetter som er gyldige for dette event
     public void addTicketToTicketlist(ticket ticket){
-        tickets.add(ticket);
+        ticketsForEvent.add(ticket);
     }
 
     @Override
     public String toString(){
         return "\n****************\n" + eventName + "\n" + date + "\nSted: " + location + "\n" + "Organizer: " + String.valueOf(organizer.getCompany() +
-                "\nEr det en film? " + isMovie);
+                "\n");
     }
 }

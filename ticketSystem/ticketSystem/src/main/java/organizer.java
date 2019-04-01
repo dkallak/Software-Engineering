@@ -7,14 +7,14 @@ public class organizer {
     private String referenceFirstname;
     private String referenceLastname;
     private int organizerBalance;
-
-    //Skal ikke være static fordi hver organizer har forskjellige lister over events som de eier
     private ArrayList<event> events = new ArrayList<event>();
 
-    public organizer(String company, String referenceFirstname, String referenceLastname) {
+
+    public organizer(String company, String referenceFirstname, String referenceLastname, int organizerBalance) {
         this.company = company;
         this.referenceFirstname = referenceFirstname;
         this.referenceLastname = referenceLastname;
+        this.organizerBalance = organizerBalance;
     }
 
     public organizer(String company) {
