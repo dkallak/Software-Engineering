@@ -16,7 +16,7 @@ public class organizerTest {
 
         denNorskeTurforeningen.addEvent(tripToNordby);
 
-        Assert.assertEquals(denNorskeTurforeningen.getEvents().size(), 1);
+        Assert.assertEquals(1, denNorskeTurforeningen.getEvents().size());
     }
 
 }
