@@ -1,11 +1,4 @@
-import javax.swing.*;
-import java.awt.*;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Scanner;
 
 public class Main {
 
@@ -112,7 +105,7 @@ public class Main {
 
         //tripToIbiza.addTicketToTicketlist(ibizaTicket1);
 
-        tripToIbiza.addTicketToTicketlist(ibizaTicket1);
+        //tripToIbiza.addTicketToTicketlist(ibizaTicket1);
 
         //System.out.println(tripToIbiza.getValidTickets());
 

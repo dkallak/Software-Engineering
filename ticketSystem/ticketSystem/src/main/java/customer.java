@@ -53,7 +53,7 @@ public class customer {
     }
 
 
-    //Metode for kjøp av billett, gir kunden eierskap til billetten. Reduserer billettantallet
+
     public void addTicket(ticket ticket, event event, payment payment){
 
         if (payment.getBalance() > event.getPrice()) {
@@ -61,23 +61,21 @@ public class customer {
             this.getCurrentPayment().setBalance(this.getCurrentPayment().getBalance() - event.getPrice());
         }
         else {
-            System.out.println("Du har ikke nok penger på kortet ditt, gutten min!");
+            System.out.println("Du har ikke dekning på kortet!");
         }
     }
 
-    //Metode for kansellering av billett. Øker billettantallet
-    public void cancelTicket (ticket ticket, event event) {
 
-        event.setTicketsRemaining(event.getTicketsRemaining()+1);
+    public void cancelTicket (ticket ticket, event event) {
         for (int i = 0; i < tickets.size(); i++) {
-        //event.getEventList().get(i).getEventName()
             if (tickets.get(i).getTicketID() == ticket.getTicketID()) {
 
                 if (tickets.get(i).isValid() == true) {
+                    event.setTicketsRemaining(event.getTicketsRemaining()+1);
                     this.getCurrentPayment().setBalance(this.getCurrentPayment().getBalance() + event.getPrice());
                 }
                 else {
-                    System.out.println("Beklager, det har skjedd en feil");
+                    System.out.println("Beklager, det har skjedd en feil!");
 
                 }
                 ticket.setValid(false);
