@@ -73,13 +73,14 @@ public class customer {
                 if (tickets.get(i).isValid() == true) {
                     event.setTicketsRemaining(event.getTicketsRemaining()+1);
                     this.getCurrentPayment().setBalance(this.getCurrentPayment().getBalance() + event.getPrice());
+
+                    ticket.setValid(false);
+                    tickets.remove(i);
                 }
                 else {
                     System.out.println("Beklager, det har skjedd en feil!");
 
                 }
-                ticket.setValid(false);
-                tickets.remove(i);
             }
         }
     }
