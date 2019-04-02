@@ -19,14 +19,14 @@ public class ticket {
         this.seatNumber = seatNumber;
         this.row = row;
         this.ticketHolder = ticketHolder;
-        this.valid = true;
+        this.valid = false;
         this.ticketID = teller.incrementAndGet();
         ticketlist.add(this);
     }
 
     public ticket(event etEvent) {
         this.ticketOfEvent = etEvent;
-        this.valid = true;
+        this.valid = false;
         this.ticketID = teller.incrementAndGet();
         ticketlist.add(this);
     }

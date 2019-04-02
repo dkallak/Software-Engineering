@@ -20,8 +20,11 @@ public class cinema extends organizer{
     public void sellTicket (customer customer, event event, organizer organizer, ticket ticket, payment payment) {
 
         customer.addTicket(ticket, event, payment);
+        customer.getCurrentPayment().setBalance(customer.getCurrentPayment().getBalance() - event.getPrice());
 
         event.setTicketsRemaining(event.getTicketsRemaining()-1);
+
+        ticket.setValid(true);
 
         if (event.isMovieEvent() == true) {
             this.setOrganizerBalance(this.getOrganizerBalance() + event.getPrice());
@@ -29,7 +32,6 @@ public class cinema extends organizer{
         }
 
         else if (event.isMovieEvent() == false) {
-
             organizer.setOrganizerBalance(organizer.getOrganizerBalance() + (event.getPrice() * 80 / 100));
             this.setOrganizerBalance(this.getOrganizerBalance() + (event.getPrice() * 20 / 100));
         }
