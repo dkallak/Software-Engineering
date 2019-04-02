@@ -17,10 +17,6 @@ public class organizer {
         this.organizerBalance = organizerBalance;
     }
 
-    public organizer(String company) {
-        this.company = company;
-    }
-
     public String getCompany() {
         return company;
     }
