@@ -19,6 +19,8 @@ public class cinema extends organizer{
 
     public void sellTicket (customer customer, event event, organizer organizer, ticket ticket, payment payment) {
 
+        customer.addTicket(ticket, event, payment);
+
         event.setTicketsRemaining(event.getTicketsRemaining()-1);
 
         if (event.isMovieEvent() == true) {

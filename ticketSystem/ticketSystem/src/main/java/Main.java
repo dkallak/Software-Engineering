@@ -5,6 +5,8 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("USECASE: Sjekke utvalg blant arrangementer");
+        System.out.println("Her skrives ut alle arrangementer som er tilgjengelig.");
+        System.out.println("Vi kan også skrive ut kun kinofilmer eller kun andre eventer, slik man ser under i koden som er kommentert ut");
 
         organizer arrangor = new organizer("Nordisk Film", "Jahn", "Svendsen", 200000);
 
@@ -29,7 +31,8 @@ public class Main {
         System.out.println("|");
 
         System.out.println("USECASE: Kunde kjøper billett");
-
+        System.out.println("Vi har metoden addTicket inne i metoden sellTicket, men for visningens skyld, ");
+        System.out.println("har vi trukket den ut for å visualisere usecaset; kjøp billett");
         payment betaling = new payment("Ola Nordmann", "4994984641041158", 2015, 2022, 456, 800);
 
         customer kunde = new customer("Kunde", "Kundesen", 29, betaling);
@@ -44,8 +47,9 @@ public class Main {
 
         kunde.addTicket(billett2, arrangement2, betaling);
 
-        System.out.println("Hvor mange billetter har kunde vises under");
-        System.out.println("Antall billetter til kunden: " + kunde.getTickets().size());
+        System.out.println("Her legger vi til billetter i kundens billettoversikt");
+        System.out.println("Vi har lagt til to billetter som koden under viser til");
+        System.out.println("Antall billetter kunden har: " + kunde.getTickets().size());
 
         System.out.println("|");
         System.out.println("|");
@@ -59,12 +63,15 @@ public class Main {
 
         //kino.sellTicket(kunde, film1, kino, billett1, betaling);
         kino.sellTicket(kunde, arrangement2, arrangor, billett2, betaling);
+
+
+        kino.sellTicket(kunde, film1, kino, billett1, betaling);
         //kino.sellTicket(kunde, arrangement2, arrangor, billett3, betaling);
 
         System.out.println("Viser til at kundens balanse endrer seg ved kjøp av en billett, og antall billetter tilgjenglige reduseres.");
         System.out.println("Billetter som er igjen er nå: " + arrangement2.getTicketsRemaining());
         System.out.println("Balansen til arrangøren: " + arrangor.getOrganizerBalance());
-        System.out.println("Balansen til kinoen: " + arrangor.getOrganizerBalance());
+        System.out.println("Balansen til kinoen: " + kino.getOrganizerBalance());
         System.out.println("Kundens saldo etter den har kjøpt en billett: " + kunde.getCurrentPayment().getBalance());
 
     }
