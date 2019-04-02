@@ -3,7 +3,7 @@ import org.junit.Test;
 import java.time.LocalDate;
 
 public class customerTest {
-    payment betaling = new payment("Geir", 222, 2,2,2,2000);
+    payment betaling = new payment("Geir", "5555444466668888", 2,2,2,2000);
     cinema fredrikstadKino = new cinema("Nordisk Film", "Lars", "Hansen", "Fredsrikstad Kino", 1000000);
     event batman = new event("Batman Origins", LocalDate.of(2019, 02, 05), "Fredrikstad", 50, 50, fredrikstadKino, 200, true);
     customer geir = new customer("Geir", "Kirksæther", 39, betaling);

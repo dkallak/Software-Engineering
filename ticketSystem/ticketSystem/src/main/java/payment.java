@@ -1,14 +1,14 @@
 public class payment {
 
     private String cardholder;
-    private int cardNumber;
+    private String cardNumber;
     private int validFrom;
     private int validTo;
     private int CVC2;
     private int balance;
 
 
-    public payment(String cardholder, int cardNumber, int validFrom, int validTo, int CVC2, int balance) {
+    public payment(String cardholder, String cardNumber, int validFrom, int validTo, int CVC2, int balance) {
         this.cardholder = cardholder;
         this.cardNumber = cardNumber;
         this.validFrom = validFrom;
@@ -25,11 +25,11 @@ public class payment {
         this.cardholder = cardholder;
     }
 
-    public int getCardNumber() {
+    public String getCardNumber() {
         return cardNumber;
     }
 
-    public void setCardNumber(int cardNumber) {
+    public void setCardNumber(String cardNumber) {
         this.cardNumber = cardNumber;
     }
 
