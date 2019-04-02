@@ -67,21 +67,23 @@ public class customer {
 
 
     public void cancelTicket (ticket ticket, event event) {
-        for (int i = 0; i < tickets.size(); i++) {
-            if (tickets.get(i).getTicketID() == ticket.getTicketID()) {
+        //for (int i = 0; i < tickets.size(); i++) {
+            //if (tickets.get(i).getTicketID() == ticket.getTicketID()) {
 
-                if (tickets.get(i).isValid() == true) {
+                //if (tickets.get(i).isValid() == true) {
+                if (ticket.isValid() == true) {
                     event.setTicketsRemaining(event.getTicketsRemaining()+1);
                     this.getCurrentPayment().setBalance(this.getCurrentPayment().getBalance() + event.getPrice());
 
+                    System.out.println("******");
                     ticket.setValid(false);
-                    tickets.remove(i);
+                    tickets.remove(ticket);
                 }
                 else {
                     System.out.println("Beklager, det har skjedd en feil!");
 
                 }
-            }
-        }
+            //}
+        //}
     }
 }

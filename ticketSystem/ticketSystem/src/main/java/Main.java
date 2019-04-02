@@ -99,9 +99,13 @@ public class Main {
 
         ticket ibizaTicket1 = new ticket(tripToIbiza, 2, 14, magne);
 
+        tripToIbiza.addTicketToTicketlist(ibizaTicket1);
 
+        magne.addTicket(ibizaTicket1, tripToIbiza, magnePayment);
 
-        //System.out.println(tripToIbiza.checkValid(ibizaTicket1));
+        magne.cancelTicket(ibizaTicket1,tripToIbiza);
+
+        System.out.println(tripToIbiza.checkValid(ibizaTicket1));
 
         //tripToIbiza.addTicketToTicketlist(ibizaTicket1);
 

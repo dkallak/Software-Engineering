@@ -170,14 +170,25 @@ public class event {
     //Sjekker om den angitte billett er gyldig/ubrukt til dette eventet
     public boolean checkValid (ticket ticket) {
 
-        int index = ticketsForEvent.indexOf(ticket);
+        //int index = ticketsForEvent.indexOf(ticket);
 
-            while (ticketsForEvent.get(index).isValid()){
+        if (ticket.isValid()) {
+            System.out.println("Denne billetten er gyldig");
+            return true;
+        }
+
+        else {
+            System.out.println("Billetten er IKKE gyldig!");
+            return false;
+        }
+        /*
+            if (ticketsForEvent.get(index).isValid()){
                 System.out.println("Denne billetten er gyldig");
                 return true;
             }
-        System.out.println("Billetten er IKKE gyldig!");
-        return false;
+            */
+
+
     }
 
     //Brukes til å administrere hvilke billetter som er gyldige for dette event
