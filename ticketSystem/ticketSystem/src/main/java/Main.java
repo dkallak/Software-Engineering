@@ -107,6 +107,11 @@ public class Main {
 
         System.out.println(tripToIbiza.checkValid(ibizaTicket1));
 
+        System.out.println(nemo);
+
+        System.out.println(magne.getCurrentPayment());
+        System.out.println(magne.getTickets());
+
         //tripToIbiza.addTicketToTicketlist(ibizaTicket1);
 
         //tripToIbiza.addTicketToTicketlist(ibizaTicket1);
