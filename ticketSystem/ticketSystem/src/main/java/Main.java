@@ -16,7 +16,7 @@ public class Main {
 
         event arrangement1 = new event("Arrangement 1", LocalDate.of(2019,11,10), "Lokasjon 7", 70, 70, arrangor, 100, false);
 
-        event arrangement2 = new event("Arrangement 2", LocalDate.of(2021,8,7), "Lokasjon 6", 90, 90, arrangor, 120, false);
+        event arrangement2 = new event("Arrangement 2", LocalDate.of(2021,8,7), "Lokasjon 6", 90, 90, arrangor, 100, false);
 
         System.out.println(event.getAllEvents());
         //System.out.println(event.getFilmList());
@@ -36,11 +36,13 @@ public class Main {
 
         ticket billett1 = new ticket(film1, 18, 4, kunde);
 
-        ticket billett2 = new ticket(arrangement1, 5, 6, kunde);
+        ticket billett2 = new ticket(arrangement2, 5, 6, kunde);
+
+        ticket billett3 = new ticket(arrangement2, 5, 6, kunde);
 
         kunde.addTicket(billett1, film1, betaling);
 
-        kunde.addTicket(billett2, film2, betaling);
+        kunde.addTicket(billett2, arrangement2, betaling);
 
         System.out.println("Hvor mange billetter har kunde vises under");
         System.out.println("Antall billetter til kunden: " + kunde.getTickets().size());
@@ -55,14 +57,15 @@ public class Main {
 
         cinema kino = new cinema("Kino", "Nordisk Film" , "Navn", "Navnesen", 200000);
 
-        kino.sellTicket(kunde, film1, kino, billett1, betaling);
-        kino.sellTicket(kunde, arrangement1, kino, billett2, betaling);
+        //kino.sellTicket(kunde, film1, kino, billett1, betaling);
+        kino.sellTicket(kunde, arrangement2, arrangor, billett2, betaling);
+        //kino.sellTicket(kunde, arrangement2, arrangor, billett3, betaling);
 
         System.out.println("Viser til at kundens balanse endrer seg ved kjøp av en billett, og antall billetter tilgjenglige reduseres.");
-        System.out.println(film1.getTicketsRemaining());
+        System.out.println("Billetter som er igjen er nå: " + arrangement2.getTicketsRemaining());
         System.out.println("Balansen til arrangøren: " + arrangor.getOrganizerBalance());
-        System.out.println("Balansen til kinoen: " + kino.getOrganizerBalance());
-        System.out.println(kunde.getCurrentPayment().getBalance());
+        System.out.println("Balansen til kinoen: " + arrangor.getOrganizerBalance());
+        System.out.println("Kundens saldo etter den har kjøpt en billett: " + kunde.getCurrentPayment().getBalance());
 
     }
 }

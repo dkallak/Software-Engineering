@@ -65,7 +65,7 @@ public class cinemaTest {
         int priceCut = tripToNordby.getPrice() * 20 / 100; // = 18
         int askimBalanse = askimKino.getOrganizerBalance() + priceCut; // 250000 + 18 = 250018
 
-        askimKino.sellTicket(jahnTeigen, tripToNordby, askimKino, billett1Nordby, balanceOfJahn);
+        askimKino.sellTicket(jahnTeigen, tripToNordby, denNorskeTurforeningen, billett1Nordby, balanceOfJahn);
 
         Assert.assertEquals(askimBalanse, askimKino.getOrganizerBalance());
 
