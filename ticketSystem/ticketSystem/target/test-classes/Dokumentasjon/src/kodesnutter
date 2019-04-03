@@ -1,0 +1,67 @@
+
+Skriv ut den filmen du skriver inn i kommandolinje (funker ikke)
+
+Scanner scanner = new Scanner(System.in);
+String hvilkenFilm = scanner.nextLine();
+
+for (int i = 0; i < event.getEventList().size(); i++) {
+
+    if (event.getEventList().get(i).getEventName() == hvilkenFilm) {
+        //System.out.println(event.getEventList().get(i));
+        System.out.println("ff");
+    }
+}
+
+
+//Sjekker om den angitte billett er gyldig/ubrukt til dette eventet
+public boolean checkValid (ticket ticket) {
+    int index=tickets.indexOf(ticket);
+    if(index>=0) { // Finnes billetten i dette eventet?
+        if(tickets.get(index).isValid()) { // Og er den gyldig?
+            System.out.println("Denne billetten er gyldig");
+            return true;
+        }
+    }
+    return false;
+}
+
+//Sjekker om den angitte billett er gyldig/ubrukt til dette eventet
+    public boolean checkValid (ticket ticket) {
+
+        //int index=tickets.indexOf(ticket);
+
+        //if(index>=0) { // Finnes billetten i dette eventet?
+
+        Boolean test;
+        for (int i = 0; i < tickets.size(); i++) {
+            if (tickets.get(i).isValid()) { // Og er den gyldig?
+                    System.out.println("Denne billetten er gyldig");
+                    //return true;
+                    test = true;
+                }
+                else {
+                    //return false;
+                    test = false;
+                }
+            }
+        return test;
+    }
+
+    JFrame frame = new JFrame();
+
+    JPanel panel = new JPanel();
+    panel.setBackground(Color.BLACK);
+    frame.getContentPane().add(panel);
+
+    JButton button = new JButton("Bestill Billett");
+    panel.add(button);
+
+    JTextField navn = new JTextField();
+    navn.setPreferredSize(new Dimension(200, 20));
+    panel.add(navn);
+
+    frame.setSize(new Dimension(500, 400));
+    frame.setLocationRelativeTo(null);
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    frame.setTitle("Billett Orakel");
+    frame.setVisible(true);
