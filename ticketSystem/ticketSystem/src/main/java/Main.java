@@ -16,9 +16,9 @@ public class Main {
 
         event film3 = new event("Film 3", LocalDate.of(2020,1,26), "Lokasjon 1", 1, 230, 230, arrangor, 180, true);
 
-        event arrangement1 = new event("Arrangement 1", LocalDate.of(2019,11,10), "Lokasjon 7", 70, 70, arrangor, 100, false);
+        event arrangement2 = new event("Arrangement 1", LocalDate.of(2019,11,10), "Lokasjon 7", 70, 70, arrangor, 100, false);
 
-        event arrangement2 = new event("Arrangement 2", LocalDate.of(2021,8,7), "Lokasjon 6", 90, 90, arrangor, 100, false);
+        event arrangement3 = new event("Arrangement 2", LocalDate.of(2021,8,7), "Lokasjon 6", 90, 90, arrangor, 100, false);
 
         System.out.println(event.getAllEvents());
         //System.out.println(event.getFilmList());
@@ -41,13 +41,15 @@ public class Main {
 
         ticket billett2 = new ticket(arrangement2, 5, 6, kunde);
 
-        ticket billett3 = new ticket(arrangement2, 5, 6, kunde);
+        ticket billett3 = new ticket(film2, 3, 8, kunde);
+
+        ticket billett4 = new ticket(arrangement3, 1, 9, kunde);
 
         kunde.addTicket(billett1, film1, betaling);
 
         kunde.addTicket(billett2, arrangement2, betaling);
 
-        System.out.println("Her legger vi til billetter i kundens billettoversikt");
+        System.out.println("Her legger vi til billetter i kundens billettoversikt.");
         System.out.println("Vi har lagt til to billetter som koden under viser til");
         System.out.println("Antall billetter kunden har: " + kunde.getTickets().size());
 
@@ -58,14 +60,16 @@ public class Main {
         System.out.println("|");
 
         System.out.println("USECASE: Selge billett");
+        System.out.println("Når vi selger en billett, tar vi imot flere parametere, ");
+        System.out.println("slik at den også tilfredsstiller addTicket-metoden som ligger inne i sellTicket.");
 
         cinema kino = new cinema("Kino", "Nordisk Film" , "Navn", "Navnesen", 200000);
 
         //kino.sellTicket(kunde, film1, kino, billett1, betaling);
-        kino.sellTicket(kunde, arrangement2, arrangor, billett2, betaling);
+        kino.sellTicket(kunde, arrangement3, arrangor, billett4, betaling);
 
 
-        kino.sellTicket(kunde, film1, kino, billett1, betaling);
+        kino.sellTicket(kunde, film2, kino, billett3, betaling);
         //kino.sellTicket(kunde, arrangement2, arrangor, billett3, betaling);
 
         System.out.println("Viser til at kundens balanse endrer seg ved kjøp av en billett, og antall billetter tilgjenglige reduseres.");
@@ -73,6 +77,31 @@ public class Main {
         System.out.println("Balansen til arrangøren: " + arrangor.getOrganizerBalance());
         System.out.println("Balansen til kinoen: " + kino.getOrganizerBalance());
         System.out.println("Kundens saldo etter den har kjøpt en billett: " + kunde.getCurrentPayment().getBalance());
+
+        System.out.println("|");
+        System.out.println("|");
+        System.out.println("|");
+        System.out.println("|");
+        System.out.println("|");
+
+        System.out.println("USECASE: Kanselere en billett");
+        System.out.println("Vi tar imot parameterne billett og eventet som billetten tilhører.");
+
+        System.out.println("Kundens antall billetter før kanselering: " + kunde.getTickets().size());
+        kunde.cancelTicket(billett3, film2);
+        System.out.println("Kundens antall billetter etter kanselering: " + kunde.getTickets().size());
+
+        System.out.println("|");
+        System.out.println("|");
+        System.out.println("|");
+        System.out.println("|");
+        System.out.println("|");
+
+        System.out.println("USECASE: Sjekker om en billett er gyldig ");
+
+
+
+
 
     }
 }
