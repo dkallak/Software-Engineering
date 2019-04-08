@@ -1,0 +1,6 @@
+- Hvis tid/GUI: Lage metode for å sette billett til false når billettens dato overstiger eventets dato
+
+- Hvis tid: Sjekke om det er flere ledige plasser i et event. Husk hva hvis en kunde holder på å betale
+  en billett mens en annen holder på å reservere samme billett, dette går jo ikke
+
+- Holde av billett, lag dokumentasjon, og nevn det i rapporten

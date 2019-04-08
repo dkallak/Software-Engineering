@@ -1,0 +1,32 @@
+
+
+
+//Finner balansen til Martin
+System.out.println(martin.getCurrentPayment().getBalance());
+
+//Lager en ticket til eventet Nemo
+ticket nemoTicket1 = new ticket(nemo, 30, 8, martin);
+ticket nemoTicket2 = new ticket(nemo, 54, 2, martin);
+martin.addTicket(nemoTicket1,nemo, martin);
+martin.addTicket(nemoTicket2,nemo, martin);
+
+//Sjekker balansen til Martin
+System.out.println(martin.getCurrentPayment().getBalance());
+martin.cancelTicket(nemoTicket1,nemo,martin);
+martin.cancelTicket(nemoTicket2,nemo,martin);
+
+
+//Avbestiller billetten til Martin
+//martin.cancelTicket(nemoTicket2,nemo,martin);
+
+
+Legger til billetter til nemo
+nemo.addTicket(nemoTicket1);
+nemo.addTicket(nemoTicket2);
+
+
+//Sjekker om billetter er gyldige (etter avbestilling)
+System.out.println(nemo.checkValid(nemoTicket1));
+System.out.println(nemo.checkValid(nemoTicket2));
+System.out.println("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
+System.out.println(nemo.getTickets().size());

@@ -58,6 +58,7 @@ public class customer {
 
         if (payment.getBalance() > event.getPrice()) {
             tickets.add(ticket);
+            event.setTicketsRemaining(event.getTicketsRemaining()-1);
         }
         else {
             System.out.println("Du har ikke dekning på kortet!");

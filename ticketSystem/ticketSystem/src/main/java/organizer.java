@@ -59,6 +59,8 @@ public class organizer {
 
     @Override
     public String toString(){
-        return referenceFirstname + " " + referenceLastname + "\n" ;
+        return "Company: " + company +
+                "\nFornavn: " + referenceFirstname +
+                "\nEtternavn: " + referenceLastname;
     }
 }
