@@ -1,6 +1,4 @@
 import org.junit.Assert;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 
@@ -31,6 +29,7 @@ public class eventTest {
     public void isTicketValid() {
 
         tripToIbiza.addTicketToTicketlist(ibizaTicket1);
+        drammenKino.sellTicket(magne, tripToIbiza, studentParlamentet, ibizaTicket1, magnePayment);
 
         Assert.assertEquals(true, tripToIbiza.checkValid(ibizaTicket1));
     }
