@@ -26,9 +26,7 @@ public class customerTest {
         //Instansen av geirBalanse kjøper en billett (-200), samme som skjer i bakgrunn i addTicket()
         int geirBalanse = geir.getCurrentPayment().getBalance()-200;
 
-        geir.addTicket(billett1, batman, betaling);
-
-        //geir.getCurrentPayment().setBalance(geir.getCurrentPayment().getBalance() - batman.getPrice());
+        fredrikstadKino.sellTicket(geir,batman, fredrikstadKino, billett1, betaling);
 
         Assert.assertEquals(geirBalanse,geir.getCurrentPayment().getBalance());
 
