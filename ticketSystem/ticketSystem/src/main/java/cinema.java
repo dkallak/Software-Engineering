@@ -22,8 +22,6 @@ public class cinema extends organizer{
         customer.addTicket(ticket, event, payment);
         customer.getCurrentPayment().setBalance(customer.getCurrentPayment().getBalance() - event.getPrice());
 
-        event.setTicketsRemaining(event.getTicketsRemaining()-1);
-
         ticket.setValid(true);
 
         if (event.isMovieEvent() == true) {

@@ -6,7 +6,6 @@ public class visualiseringAvMain1 {
     public static void main(String[] args) {
 
 
-
         organizer arrangor = new organizer("Nordisk Film", "Jahn", "Svendsen", 200000);
 
         event film1 = new event("Film 1", LocalDate.of(2019, 6, 3), "Lokasjon 5", 5, 200, 200, arrangor, 100, true);
@@ -19,13 +18,7 @@ public class visualiseringAvMain1 {
 
         event arrangement3 = new event("Arrangement 2", LocalDate.of(2021, 8, 7), "Lokasjon 6", 90, 90, arrangor, 100, false);
 
-
-
-        System.out.println("|");
-        System.out.println("|");
-        System.out.println("|");
-        System.out.println("|");
-        System.out.println("|");
+        cinema kino = new cinema("Kino", "Nordisk Film", "Navn", "Navnesen", 200000);
 
         payment betaling = new payment("Ola Nordmann", "4994984641041158", 2015, 2022, 456, 800);
 
@@ -39,71 +32,18 @@ public class visualiseringAvMain1 {
 
         ticket billett4 = new ticket(arrangement3, 1, 9, kunde);
 
-
-
-        System.out.println("|");
-        System.out.println("|");
-        System.out.println("|");
-        System.out.println("|");
-        System.out.println("|");
-
-
-        System.out.println("USECASE: Kansellere en billett");
-        System.out.println("Vi tar imot parameterne billett og eventet som billetten tilhører.");
-
-        System.out.println("Kundens antall billetter før kanselering: " + kunde.getTickets().size());
-        kunde.cancelTicket(billett3, film2);
-        System.out.println("Kundens antall billetter etter kanselering: " + kunde.getTickets().size());
-
-        System.out.println("|");
-        System.out.println("|");
-        System.out.println("|");
-        System.out.println("|");
-        System.out.println("|");
-
-        System.out.println("USECASE: Sjekker om en billett er gyldig ");
-        System.out.println("Den første billetten er kansellert, og dermed ikke gyldig");
-        System.out.println(film2.checkValid(billett3));
-        System.out.println("Denne billetten er solgt, så er fortsatt gyldig");
-        System.out.println(arrangement3.checkValid(billett4));
-
-        System.out.println("|");
-        System.out.println("|");
-        System.out.println("|");
-        System.out.println("|");
-        System.out.println("|");
-
-        System.out.println("USECASE: Registrere arrangør");
-        System.out.println("Her registrerer vi arrangører, altså oppretter objekter av klassen organizer");
-        organizer organisor = new organizer("Company1", "Fornavn1", "Etternavn1", 200000);
-        System.out.println(organisor);
-
-        System.out.println("|");
-        System.out.println("|");
-        System.out.println("|");
-        System.out.println("|");
-        System.out.println("|");
-
-        System.out.println("USECASE: Administrere arrangement");
-        System.out.println("Her endrer vi elementer av et arrangement");
-        System.out.println(film2.getEventName());
-        System.out.println(film2.getDate());
-        film2.setDate(LocalDate.of(2019, 07, 13));
-        film2.setEventName("Film to");
-        System.out.println(film2.getEventName());
-        System.out.println(film2.getDate());
-
-        System.out.println("|");
-        System.out.println("|");
-        System.out.println("|");
-        System.out.println("|");
-        System.out.println("|");
-
         Scanner myObj = new Scanner(System.in);
 
-        System.out.println("USECASE1 = Selgebillett");
-        System.out.println("USECASE2 = Kjøpe billett");
+        System.out.println("USECASE: 1 = Selge billett");
+        System.out.println("USECASE: 2 = Sjekke utvalg");
+        System.out.println("USECASE: 3 = Kjøpe billett");
+        System.out.println("USECASE: 4 = Avbestille billett");
+        System.out.println("USECASE: 5 = Administrere arrangement");
+        System.out.println("USECASE: 6 = Registrere arrangør");
+        System.out.println("USECASE: 7 = Kontrollere billett");
+        System.out.println();
         System.out.println("Skiv inn tallet på et av usecasene (1-7):");
+
         for (int i = 0; i < 20; i++) {
 
             String usecase1 = myObj.nextLine();
@@ -117,20 +57,19 @@ public class visualiseringAvMain1 {
                     System.out.println("Når vi selger en billett, tar vi imot flere parametere, ");
                     System.out.println("slik at den også tilfredsstiller addTicket-metoden som ligger inne i sellTicket.");
 
-                    cinema kino = new cinema("Kino", "Nordisk Film", "Navn", "Navnesen", 200000);
-
-
-
                     System.out.println("Viser til at kundens balanse endrer seg ved kjøp av en billett, og antall billetter tilgjenglige reduseres.");
-                    System.out.println("Billetter som er igjen er nå: " + arrangement3.getTicketsRemaining());
+                    System.out.println();
+                    System.out.println("Billetter som er igjen før noen billetter er solgt: " + arrangement3.getTicketsRemaining());
                     System.out.println("Balansen til arrangøren: " + arrangor.getOrganizerBalance());
                     System.out.println("Balansen til kinoen: " + kino.getOrganizerBalance());
-                    System.out.println("Kundens saldo etter den har kjøpt en billett: " + kunde.getCurrentPayment().getBalance());
+                    System.out.println("Kundens saldo: " + kunde.getCurrentPayment().getBalance());
                     kino.sellTicket(kunde, arrangement3, arrangor, billett4, betaling);
+                    System.out.println("Billettens pris: " + arrangement3.getPrice());
+                    System.out.println();
 
                     System.out.println("Billetter som er igjen er nå: " + arrangement3.getTicketsRemaining());
-                    System.out.println("Balansen til arrangøren: " + arrangor.getOrganizerBalance());
-                    System.out.println("Balansen til kinoen: " + kino.getOrganizerBalance());
+                    System.out.println("Balansen til arrangørene etter en billett er solgt: " + arrangor.getOrganizerBalance());
+                    System.out.println("Balansen til kinoen etter en billett er solgt: " + kino.getOrganizerBalance());
                     System.out.println("Kundens saldo etter den har kjøpt en billett: " + kunde.getCurrentPayment().getBalance());
 
                     System.out.println();
@@ -138,7 +77,7 @@ public class visualiseringAvMain1 {
                 } else if (s == 2) {
                     System.out.println("USECASE 2: Sjekke utvalg blant arrangementer");
                     System.out.println("Her skrives ut alle arrangementer som er tilgjengelig.");
-                    System.out.println("Vi kan også skrive ut kun kinofilmer eller kun andre eventer, slik man ser under i koden som er kommentert ut");
+                    System.out.println("Vi kan også skrive ut kun kinofilmer eller kun andre eventer. Dette er kommentert ut under i koden");
 
                     System.out.println(event.getAllEvents());
                     //System.out.println(event.getFilmList());
@@ -150,24 +89,73 @@ public class visualiseringAvMain1 {
                     System.out.println("Vi har metoden addTicket inne i metoden sellTicket, men for visningens skyld, ");
                     System.out.println("har vi trukket den ut for å visualisere usecaset; kjøp billett");
 
-                    kunde.addTicket(billett1, film1, betaling);
-
-                    kunde.addTicket(billett2, arrangement2, betaling);
-
                     System.out.println("Her legger vi til billetter i kundens billettoversikt.");
                     System.out.println("Vi har lagt til to billetter som koden under viser til");
-                    System.out.println("Antall billetter kunden har: " + kunde.getTickets().size());
+
+                    System.out.println();
+
+                    System.out.println("Antall billetter kunden har før den har kjøpt billetter: " + kunde.getTickets().size());
+                    System.out.println("Billetter igjen på filmeventet før billetter har blitt kjøpt: " + film1.getTicketsRemaining());
+                    System.out.println("Billetter igjen på arrangementet før billetter har blitt kjøpt: " + arrangement2.getTicketsRemaining());
+
+                    System.out.println();
+
+                    kunde.addTicket(billett1, film1, betaling);
+                    kunde.addTicket(billett2, arrangement2, betaling);
+                    System.out.println("Antall billetter kunden har etter å ha kjøpt billett: " + kunde.getTickets().size());
+                    System.out.println("Billetter igjen på filmeventet etter billetter har blitt kjøpt: " + film1.getTicketsRemaining());
+
+                    System.out.println("Billetter igjen på arrangementet etter billetter har blitt kjøpt: " + arrangement2.getTicketsRemaining());
                     System.out.println();
                     System.out.println("Skiv inn tallet på et av usecasene (1-7):");
                 } else if (s == 4) {
-                    System.out.println("Usecase " + s);
+                    System.out.println("USECASE 4: Kansellere en billett");
+                    System.out.println("Vi tar imot parameterne billett og eventet som billetten tilhører.");
+
+                    kino.sellTicket(kunde, film2, kino, billett3, betaling);
+                    System.out.println("Kundens antall billetter før kansellering: " + kunde.getTickets().size());
+                    kunde.cancelTicket(billett3, film2);
+                    System.out.println("Kundens antall billetter etter kansellering: " + kunde.getTickets().size());
+
                     System.out.println();
                     System.out.println("Skiv inn tallet på et av usecasene (1-7):");
                 } else if (s == 5) {
-                    System.out.println("Usecase " + s);
+                    System.out.println("USECASE: 5: Administrere arrangement");
+                    System.out.println("Her endrer vi elementer av et arrangement");
+                    System.out.println("Før:");
+                    System.out.println(film2.getEventName());
+                    System.out.println(film2.getDate());
+                    film2.setDate(LocalDate.of(2019, 07, 13));
+                    film2.setEventName("Film to");
+                    System.out.println("Etter:");
+                    System.out.println(film2.getEventName());
+                    System.out.println(film2.getDate());
+
                     System.out.println();
                     System.out.println("Skiv inn tallet på et av usecasene (1-7):");
-                } else {
+                }
+                else if (s == 6) {
+                    System.out.println("USECASE: 6: Registrere arrangør");
+                    System.out.println("Her registrerer vi arrangører, altså oppretter et objekt av klassen organizer");
+                    organizer organisor = new organizer("Company1", "Fornavn1", "Etternavn1", 200000);
+                    System.out.println(organisor);
+
+                    System.out.println();
+                    System.out.println("Skiv inn tallet på et av usecasene (1-7):");
+                }
+                else if (s == 7) {
+                    System.out.println("USECASE: 7: Kontrollere billett");
+
+                    System.out.println("Sjekker om en billett er gyldig ");
+                    System.out.println("Den første billetten er kansellert, og dermed ikke gyldig");
+                    System.out.println(film2.checkValid(billett3));
+                    System.out.println("Denne billetten er solgt, så er fortsatt gyldig");
+                    System.out.println(arrangement3.checkValid(billett4));
+
+                    System.out.println();
+                    System.out.println("Skiv inn tallet på et av usecasene (1-7):");
+                }
+                else {
                     System.out.println("Du skrev inn et ugyldig usecasenummer!");
                     System.out.println();
                     System.out.println("Skiv inn tallet på et av usecasene (1-7):");
